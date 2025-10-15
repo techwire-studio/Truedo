@@ -83,7 +83,7 @@ const Services = () => {
       </div>
 
       {/* Vertical Stacking Slider */}
-   <div className="relative  mb-0" style={{ height: `${(services.length - 1) * 70}vh` }}>
+   <div className="relative  mb-0" style={{ height: `${(services.length - 1) * 80}vh` }}>
   {services.map((service, index) => (
     <div
       key={index}
@@ -95,7 +95,7 @@ const Services = () => {
       >
         <div className="lg:w-1/2 flex flex-col">
           <span className="text-black font-semibold text-3xl lg:text-5xl mb-6 flex items-center gap-2 font-work ">
-           <img src={index % 2 === 0 ? Arrow2 : Arrow1} alt="" />  {service.heading}
+            {service.heading}
           </span>
           <p className="text-black text-xl lg:text-3xl leading-relaxed mt-20">
             {service.content}
