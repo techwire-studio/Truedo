@@ -26,24 +26,32 @@ const Footer = () => {
           </button>
         </div>
         <div>
-            <div className='font-semibold'>
-                <span className='flex items-center gap-4'>
-                    <p className='text-white font-dm text-[32px]'>Instagram</p>
-                    <img src={arrow} alt="" />
-                </span>
-                <span className='flex items-center gap-4'>
-                    <p className='text-white font-dm text-[32px]'>Facebook</p>
-                    <img src={arrow} alt="" />
-                </span>
-                <span className='flex items-center gap-4'>
-                    <p className='text-white font-dm text-[32px]'>WhatsApp</p>
-                    <img src={arrow} alt="" />
-                </span>
-                <span className='flex items-center gap-4'>
-                    <p className='text-white font-dm text-[32px]'>Email</p>
-                    <img src={arrow} alt="" />
-                </span>
-            </div>
+           <div className="font-semibold space-y-3">
+  {[
+    { name: "Instagram", url: "https://instagram.com/yourusername" },
+    { name: "Facebook", url: "https://facebook.com/yourusername" },
+    { name: "WhatsApp", url: "https://wa.me/yourNumber" },
+    { name: "Email", url: "mailto:youremail@example.com" },
+  ].map((item, i) => (
+    <a
+      key={i}
+      href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-4 group cursor-pointer"
+    >
+      <p className="text-white font-dm text-[32px] transition-colors duration-300 group-hover:text-[#CD8B3B]">
+        {item.name}
+      </p>
+      <img
+        src={arrow}
+        alt=""
+        className="transition-transform duration-300 group-hover:rotate-45 group-hover:translate-x-1"
+      />
+    </a>
+  ))}
+</div>
+
             <button className='bg-[#CD8A38]/25 text-white/75 font-dm font-semibold mt-8 px-8 py-2 text-[24px] flex items-center gap-4'>
                 Back To Top
                 <img src={arrowUp} alt="" />

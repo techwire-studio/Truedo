@@ -1,13 +1,15 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import serviceLogo from "../assets/serviveLogo.png";
 
 const servicesData = [
-  "Modular Furniture",
-  "Kitchen Design",
-  "Living Spaces",
-  "Bedroom Interiors",
-  "Office Solutions",
-  "Bathroom Renovations",
+  { name: "Modular Furniture", image: serviceLogo },
+  { name: "Kitchen Design", image: serviceLogo },
+  { name: "Living Spaces", image: serviceLogo },
+  { name: "Bedroom Interiors", image: serviceLogo },
+  { name: "Office Solutions", image: serviceLogo },
+  { name: "Bathroom Renovations", image: serviceLogo },
 ];
 
 const Services = () => {
@@ -36,45 +38,67 @@ const Services = () => {
       </div>
 
       {/* ===== Services List ===== */}
-      <div className="mt-8 lg:text-[36px] font-bold px-8">
-        {/* Split services into pairs (2 per row) */}
-        {Array.from({ length: servicesData.length / 2 }).map((_, rowIndex) => {
-          const leftService = servicesData[rowIndex * 2];
-          const rightService = servicesData[rowIndex * 2 + 1];
+     <div className="mt-8 lg:text-[36px] font-bold px-8">
+      {/* Split into pairs */}
+      {Array.from({ length: servicesData.length / 2 }).map((_, rowIndex) => {
+        const leftService = servicesData[rowIndex * 2];
+        const rightService = servicesData[rowIndex * 2 + 1];
 
-          return (
-            <div
-              key={rowIndex}
-              className="flex justify-between border-b border-black/25 py-2"
-            >
-              {[leftService, rightService].map((service, i) => (
+        return (
+          <div
+            key={rowIndex}
+            className="flex justify-between border-b border-black/25 py-2"
+          >
+            {[leftService, rightService].map((service, i) => (
+              <div
+                key={i}
+                className="relative inline-block group cursor-pointer overflow-hidden"
+              >
+                {/* Background Image (each unique) */}
                 <div
-                  key={i}
-                  className="relative inline-block group cursor-pointer overflow-hidden"
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[20px]"
+                  style={{
+                    backgroundImage: `url(${service.image})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                ></div>
+
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-500 rounded-[20px]"></div>
+
+                {/* Text + Animated Arrow */}
+                <h4
+                  className="relative z-10 flex gap-4 items-center font-semibold text-[#202B1A]
+                  hover:text-[#FFFCF2] px-0 py-2 transition-all duration-500 ease-in-out
+                  group-hover:px-10 group-hover:scale-105"
                 >
-                  {/* Hover Background Image */}
-                  <div className="absolute inset-0 bg-[url('src/assets/featured1.png')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-md"></div>
-
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-500 rounded-md"></div>
-
-                  {/* Text + Arrow */}
-                  <h4
-                    className="relative z-10 flex gap-4 items-center font-semibold text-[#202B1A]
-                    hover:text-[#FFFCF2] px-0 py-2 transition-all duration-500 ease-in-out
-                    group-hover:px-10 group-hover:scale-105"
+                  <motion.svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2.5"
+                    stroke="currentColor"
+                    className="size-8 hidden group-hover:block"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
                   >
-                    <span className="hidden group-hover:block transition-all duration-300 -rotate-45">
-                      →
-                    </span>
-                    <span>{service}</span>
-                  </h4>
-                </div>
-              ))}
-            </div>
-          );
-        })}
-      </div>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                    />
+                  </motion.svg>
+
+                  <span>{service.name}</span>
+                </h4>
+              </div>
+            ))}
+          </div>
+        );
+      })}
+    </div>
     </div>
   );
 };

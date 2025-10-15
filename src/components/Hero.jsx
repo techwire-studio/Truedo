@@ -4,7 +4,7 @@ import heroLogo from "../assets/heroLogo.png";
 
 const Hero = () => {
   return (
-    <div className="w-full h-screen relative">
+    <div className="w-full h-screen relative rounded-[50px] overflow-hidden">
       {/* Centered logo */}
       <div className="absolute inset-0 flex lg:gap-4 items-center  justify-center z-10">
         <img className="lg:w-[450px] lg:h-auto" src={heroLogo} alt="" />
@@ -25,7 +25,7 @@ const Hero = () => {
       </div>
 
       {/* Background image */}
-      <img className="h-screen w-full lg:py-4" src={heroDesktop} alt="Hero" />
+      <img className="h-screen w-full lg:py-4 rounded-[70px] overflow-hidden" src={heroDesktop} alt="Hero" />
     </div>
   );
 };

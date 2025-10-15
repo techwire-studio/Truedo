@@ -83,7 +83,7 @@ const Services = () => {
       </div>
 
       {/* Vertical Stacking Slider */}
-   <div className="relative  mb-0" style={{ height: `${(services.length - 1) * 80}vh` }}>
+   <div className="relative  mb-0" style={{ height: `${(services.length - 1) * 75}vh` }}>
   {services.map((service, index) => (
     <div
       key={index}
