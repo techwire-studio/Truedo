@@ -1,29 +1,39 @@
 import React, { useState, useEffect, useRef } from "react";
 
+import featured1 from "../assets/featured1.png";
+import featured2 from "../assets/featured2.png";
+import arrow from "../assets/featuredArrow.png"
+
 const featuredProducts = [
   {
     title: "MODULAR KITCHEN",
     description:
       "Our modular kitchen designs blend style, functionality, and smart space utilization. With sleek layouts, high-quality finishes, and innovative storage solutions, we create kitchens that make cooking and dining a joyful experience. Each design is tailored to your lifestyle, ensuring convenience meets elegance.",
-    image: "kitchen",
+    image: featured1,
   },
   {
-    title: "LIVING ROOM DESIGN",
+    title: "Wardrobes",
     description:
-      "Transform your living space into a haven of comfort and style. Our designs focus on creating warm, inviting environments that reflect your personality while maximizing functionality. From modern minimalism to classic elegance, we craft spaces that bring families together.",
-    image: "living",
+      "Maximize your space with our customized wardrobe solutions. From sliding to hinged designs, we offer wardrobes that are both stylish and practical. Crafted with precision and premium materials, our wardrobes enhance organization while adding sophistication to your interiors.",
+    image: featured2,
   },
   {
-    title: "BEDROOM INTERIORS",
+    title: "Turnkey Renovation",
     description:
-      "Create your perfect sanctuary with our bedroom interior solutions. We combine aesthetics with comfort, offering custom designs that promote relaxation and tranquility. Every element is carefully chosen to ensure your bedroom becomes a peaceful retreat from the world.",
-    image: "bedroom",
+      "Transform your home or office with our hassle-free turnkey renovation services. From planning and design to execution and finishing, we manage every detail with care. Our expert team ensures on-time delivery, superior quality, and a smooth renovation journey that brings your vision to life.",
+    image: featured1,
   },
   {
-    title: "OFFICE SPACES",
+    title: "Painting",
     description:
-      "Design a workspace that inspires productivity and creativity. Our office solutions blend professional aesthetics with ergonomic functionality, creating environments that enhance focus and motivation. Whether home office or corporate space, we deliver excellence.",
-    image: "office",
+      "Refresh and redefine your spaces with our professional painting services. We use premium paints and expert techniques to deliver flawless finishes, vibrant colors, and long-lasting results. Whether it’s a bold new look or subtle elegance, our painting solutions add character and charm to your interiors.",
+    image: featured2,
+  },
+  {
+    title: "Materials",
+    description:
+      "We source and provide high-quality materials that form the backbone of every great design. From durable laminates and premium plywood to fittings and finishes, our material selection ensures strength, beauty, and longevity in every project. Quality is at the core of everything we build.",
+    image: featured1,
   },
 ];
 
@@ -34,44 +44,46 @@ const Featured = () => {
   const wheelTimeout = useRef(null);
 
   useEffect(() => {
+    let touchStartY = 0;
+    let touchEndY = 0;
+
     const handleWheel = (e) => {
       if (!containerRef.current) return;
 
       const rect = containerRef.current.getBoundingClientRect();
       const scrollingDown = e.deltaY > 0;
-      
+
       // Only handle scroll when container is in viewport
       if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
-        
         // At last slide and scrolling down - allow natural scroll
         if (scrollingDown && currentSlide === featuredProducts.length - 1) {
           isTransitioning.current = false;
-          return; // Let browser handle scroll naturally
+          return;
         }
-        
+
         // At first slide and scrolling up - allow natural scroll
         if (!scrollingDown && currentSlide === 0) {
           isTransitioning.current = false;
-          return; // Let browser handle scroll naturally
+          return;
         }
 
         // Block all scrolling during transition
         if (isTransitioning.current) {
           e.preventDefault();
+          e.stopPropagation();
           return;
         }
 
         // Prevent default scroll and handle slide change
         e.preventDefault();
-        
+        e.stopPropagation();
+
         // Start transition immediately
         isTransitioning.current = true;
 
         if (scrollingDown && currentSlide < featuredProducts.length - 1) {
-          // Scroll down - next slide
           setCurrentSlide((prev) => prev + 1);
         } else if (!scrollingDown && currentSlide > 0) {
-          // Scroll up - previous slide
           setCurrentSlide((prev) => prev - 1);
         }
 
@@ -82,10 +94,67 @@ const Featured = () => {
       }
     };
 
+    const handleTouchStart = (e) => {
+      touchStartY = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e) => {
+      if (!containerRef.current || isTransitioning.current) return;
+
+      const rect = containerRef.current.getBoundingClientRect();
+
+      if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
+        touchEndY = e.touches[0].clientY;
+        const scrollingDown = touchStartY > touchEndY;
+
+        // At boundaries - allow natural scroll
+        if (
+          (scrollingDown && currentSlide === featuredProducts.length - 1) ||
+          (!scrollingDown && currentSlide === 0)
+        ) {
+          return;
+        }
+
+        e.preventDefault();
+      }
+    };
+
+    const handleTouchEnd = () => {
+      if (!containerRef.current || isTransitioning.current) return;
+
+      const rect = containerRef.current.getBoundingClientRect();
+
+      if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
+        const scrollingDown = touchStartY > touchEndY;
+        const diff = Math.abs(touchStartY - touchEndY);
+
+        if (diff > 50) {
+          // Minimum swipe distance
+          isTransitioning.current = true;
+
+          if (scrollingDown && currentSlide < featuredProducts.length - 1) {
+            setCurrentSlide((prev) => prev + 1);
+          } else if (!scrollingDown && currentSlide > 0) {
+            setCurrentSlide((prev) => prev - 1);
+          }
+
+          setTimeout(() => {
+            isTransitioning.current = false;
+          }, 750);
+        }
+      }
+    };
+
     window.addEventListener("wheel", handleWheel, { passive: false });
-    
+    window.addEventListener("touchstart", handleTouchStart, { passive: false });
+    window.addEventListener("touchmove", handleTouchMove, { passive: false });
+    window.addEventListener("touchend", handleTouchEnd);
+
     return () => {
       window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("touchend", handleTouchEnd);
       if (wheelTimeout.current) {
         clearTimeout(wheelTimeout.current);
       }
@@ -96,7 +165,10 @@ const Featured = () => {
     <div className="pb-8">
       {/* Scroll space - reduced for easier navigation */}
       <div style={{ height: `${(featuredProducts.length - 1) * 50}vh` }}>
-        <div ref={containerRef} className="sticky top-0 w-full h-screen flex items-center">
+        <div
+          ref={containerRef}
+          className="sticky top-0 w-full h-screen flex items-center"
+        >
           <div className="w-full h-[calc(100vh-64px)] bg-[#202B1A] rounded-[51px] p-8 flex flex-col relative overflow-hidden">
             <p className="text-[#FFFCF2] capitalize lg:text-[28px] font-thin mb-4 relative z-10">
               Featured Products
@@ -117,10 +189,8 @@ const Featured = () => {
                   top: "80px",
                 }}
               >
-                <div className="lg:w-[30%] text-[#FFFCF2] mt-8">
-                  <h2 className="lg:text-[32px] font-bold">
-                    {product.title}
-                  </h2>
+                <div className="lg:w-[30%] text-[rgb(255,252,242)] mt-8">
+                  <span className="flex items-center gap-4"><img src={arrow} alt="" /> <h2 className="lg:text-[32px] font-bold">{product.title} </h2></span>
                   <p className="mt-8 lg:text-[22px] leading-relaxed">
                     {product.description}
                   </p>
@@ -135,34 +205,17 @@ const Featured = () => {
                     <span className="ml-2 inline-block -rotate-45">→</span>
                   </button>
                 </div>
-                <div className="lg:w-[70%]">
-                  <div className="h-[550px] w-full bg-gradient-to-br from-[#CD8A38] to-[#8B5A2B] rounded-2xl flex items-center justify-center text-white/30 text-6xl font-bold">
-                    {product.image.toUpperCase()}
+                <div className="lg:w-[70%] pb-20">
+                  <div className="lg:w-[100%] flex items-center justify-center">
+                    <img
+                      className="max-h-[70vh] rounded-[35px] w-full object-cover transition-all duration-700"
+                      src={product.image}
+                      alt={product.title}
+                    />
                   </div>
                 </div>
               </div>
             ))}
-
-            {/* Indicators */}
-            <div className="absolute bottom-8 right-8 flex flex-col gap-2 z-20">
-              {featuredProducts.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-8 rounded-full transition-all ${
-                    index === currentSlide
-                      ? "bg-[#CD8A38] h-12"
-                      : "bg-white/30 hover:bg-white/50"
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-
-            {/* Progress Text */}
-            <div className="absolute bottom-8 left-8 text-white/50 text-sm z-20">
-              {currentSlide + 1} / {featuredProducts.length}
-            </div>
           </div>
         </div>
       </div>

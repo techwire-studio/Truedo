@@ -2,19 +2,19 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import whyLogo from '/src/assets/whyLogo.png';
+
 import board from "../assets/board.png"
 
 export default function WhyUs() {
   return (
-    <div className="h-screen py-10">
+    <div className="h-screen py-10 font-work">
       <div className="bg-[#CD8B3B] h-full rounded-[51px] px-16 py-16 overflow-hidden">
         {/* Header */}
         <div className="flex gap-4 mb-8">
-          <img className="lg:h-[60px]" src={whyLogo} alt="Why Us Logo" />
+          {/* <img className="lg:h-[60px]" src={whyLogo} alt="Why Us Logo" /> */}
           <div className="text-[#FFFCF2] w-[90%]">
             <h2 className="lg:text-[40px] font-work font-semibold">Why Us</h2>
-            <p className="font-work lg:text-[22px] leading-6 tracking-widest">
+            <p className="font-work lg:text-[22px] leading-6 ">
               We craft bespoke interiors with premium materials, expert craftsmanship, and end-to-end solutions.
               Our focus is on elegance, functionality, and creating spaces that truly reflect your lifestyle.
             </p>

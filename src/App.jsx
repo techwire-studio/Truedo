@@ -14,7 +14,7 @@ function App() {
     <div className='bg-[#fffcf2]'>
       <Router>
         <Header />
-        <div className='lg:px-8'>
+        <div className='lg:px-4'>
 
         <Routes>
           <Route path='/' element={<Home />}/>

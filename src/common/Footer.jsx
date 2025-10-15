@@ -6,7 +6,7 @@ import arrowUp from "../assets/Arrow 5.png"
 
 const Footer = () => {
   return (
-    <div className='w-full bg-[#202B1A] px-8 py-12 '>
+    <div className='w-full bg-[#202B1A] px-8 py-12  font-dm'>
         <div className='flex justify-between'>
             <div className='flex flex-col gap-8'>
             <img className='h-[120px] w-auto' src={footerLogo} alt="" />
@@ -26,7 +26,7 @@ const Footer = () => {
           </button>
         </div>
         <div>
-            <div>
+            <div className='font-semibold'>
                 <span className='flex items-center gap-4'>
                     <p className='text-white font-dm text-[32px]'>Instagram</p>
                     <img src={arrow} alt="" />

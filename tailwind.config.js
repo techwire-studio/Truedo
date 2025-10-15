@@ -9,6 +9,7 @@ export default {
       fontFamily: {
   dm: ['"DM Sans"', 'sans-serif'],
   work: ['"Work Sans"', 'sans-serif'],
+   helvetica: ['Helvetica', 'Arial', 'sans-serif'],
 }
 
     },
