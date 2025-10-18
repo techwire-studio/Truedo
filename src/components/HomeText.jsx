@@ -4,7 +4,7 @@ import image1 from "../assets/heroTextImage.png";
 
 const HomeText = () => {
   return (
-    <div className="w-full lg:py-20 flex justify-between">
+    <div className="w-full lg:py-20 flex justify-between lg:px-8">
       <div className="lg:w-1/2 ">
         <p className="text-[#202B1A] lg:text-[20px] leading-tight font-work">
           A creative team crafting interiors that blend <br /> beauty and

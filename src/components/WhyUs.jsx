@@ -6,7 +6,7 @@ import board from "../assets/board.png";
 
 export default function WhyUs() {
   return (
-    <div className="h-screen py-10 font-work">
+    <div className="h-screen py-10 font-work lg:px-8">
       <div className="bg-[#CD8B3B] h-full rounded-[51px] px-16 py-16 overflow-hidden">
         {/* Header */}
         <div className="flex gap-4 mb-8">

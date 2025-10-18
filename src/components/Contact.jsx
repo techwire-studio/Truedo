@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <div className='lg:py-32 font-dm flex flex-col items-center justify-center'>
+    <div className='lg:px-8 lg:py-32 font-dm flex flex-col items-center justify-center'>
             <div className='text-[#202B1A] font-semibold   lg:text-[28px]  font-dm rounded-[60.74px] border-dashed border-[#202B1A] border-[2.22px] px-16 pt-4 pb-6'>
                 Let’s bring your dream space to life
             </div>

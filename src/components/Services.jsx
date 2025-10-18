@@ -14,7 +14,7 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <div className="py-20 font-work">
+    <div className="py-20 font-work lg:px-8">
       {/* ===== Top Section ===== */}
       <div className="flex items-center justify-between px-8">
         {/* Title */}

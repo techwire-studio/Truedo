@@ -4,7 +4,7 @@ import knowLogo2 from "../assets/knowLogo2.png";
 
 const KnowMore = () => {
   return (
-    <div className="lg:py-32 font-work">
+    <div className="lg:py-32 font-work lg:px-8">
       <div className="flex gap-4 justify-center items-center">
         <div className="w-[50%] flex flex-col items-end ">
           <h2 className="text-[#202B1A] font-work font-semibold lg:text-[64px] m-0 leading-none">

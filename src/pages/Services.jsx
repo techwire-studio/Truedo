@@ -53,7 +53,7 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="w-full font-helvetica ">
+    <div className="w-full font-helvetica lg:px-8">
       {/* Top Content */}
       <div className="w-full pt-40 mb-20">
         <div className="flex items-start justify-between flex-wrap gap-8">
@@ -91,7 +91,7 @@ const Services = () => {
       style={{ top: `${index * 100}px` }}
     >
       <div
-        className={`flex gap-8 lg:gap-20 flex-col lg:flex-row bg-[#fffcf2] p-6 border-t`}
+        className={`flex gap-8 lg:gap-20 flex-col lg:flex-row bg-[#fffcf2] py-6 border-t`}
       >
         <div className="lg:w-1/2 flex flex-col">
           <span className="text-black font-semibold text-3xl lg:text-5xl mb-6 flex items-center gap-2 font-work ">
