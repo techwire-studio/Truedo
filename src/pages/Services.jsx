@@ -120,7 +120,7 @@ const Services = () => {
       {/* Vertical Stacking Slider */}
       <div
         className="relative  mb-0"
-        style={{ height: `${(services.length - 1) * 75}vh` }}
+        style={{ height: `${(services.length - 1) * 90}vh` }}
       >
         {services.map((service, index) => (
           <div
@@ -148,7 +148,7 @@ const Services = () => {
       </div>
        <div
         className="relative  mb-0"
-        style={{ height: `${(services2.length - 1) * 80}vh` }}
+        style={{ height: `${(services2.length - 1) * 90}vh` }}
       >
         {services2.map((service, index) => (
           <div
