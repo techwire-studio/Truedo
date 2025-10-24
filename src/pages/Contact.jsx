@@ -1,6 +1,6 @@
 import React from 'react'
 
-import image1 from "../assets/contactImage.png"
+import image1 from "../assets/contactNew.png"
 import instagram from "../assets/instagram.png"
 import linkedien from "../assets/linkedin.png"
 import facebook from "../assets/facebook.png"
@@ -9,10 +9,10 @@ import mobile from "../assets/call-outline.png"
 
 const Contact = () => {
   return (
-    <div className='lg:px-8 lg:py-48 flex h-fit lg:gap-8'>
+    <div className='lg:px-8  lg:py-48 flex h-fit lg:gap-8'>
         <div className='lg:w-[45%] w-full relative'>
-            <img className='w-full lg:h-[500px]' src={image1} alt="" />
-            <div className='lg:w-[380px] absolute -mt-20 right-0 lg:p-4 rounded-[23px] border-[1px] border-black h-20 bg-white flex justify-center items-center lg:gap-10'>
+            <img className='w-full lg:h-[400px]' src={image1} alt="" />
+            <div className='lg:w-[48%] absolute right-0 -mt-16  rounded-[23px] border-[1px] border-black h-16 bg-white flex  justify-center items-center lg:gap-10'>
                 <img src={instagram} alt="" />
                 <img src={linkedien} alt="" />
                 <img src={facebook} alt="" />
@@ -53,10 +53,10 @@ const Contact = () => {
                 </div>
             </div>
         </div>
-        <div className="lg:w-[55%] rounded-[28px] shadow-[0px_4px_7px_0px_rgba(0,0,0,0.25)] lg:py-12 lg:px-4">
+        <div className="lg:w-[55%] rounded-[28px] shadow-[0px_4px_7px_0px_rgba(0,0,0,0.25)] lg:py-8 lg:px-4">
           <h3 className='font-work font-medium text-center lg:text-[40px] leading-none'>Contact Us</h3>
           <p className='font-work text-[#737373] text-center font-medium'>Our friendly team would love to hear from you.</p>
-          <form className='mt-16 font-work bg-[#fffcf2] lg:space-y-8' action="">
+          <form className='mt-8 font-work bg-[#fffcf2] lg:space-y-8' action="">
             <div>
               <label className='font-medium' htmlFor="">Name*</label>
             <input type="text" className='mt-2 w-full border-[1px] text-[#737373] placeholder:text-[#737373] border-[#737373] bg-[#fffcf2] p-4 rounded-[13px]'
@@ -80,7 +80,7 @@ const Contact = () => {
             </div>
              <div>
               <label className='font-medium' htmlFor="">Name*</label>
-            <textarea type="text" className='lg:h-[200px] mt-2 w-full border-[1px] text-[#737373] placeholder:text-[#737373] border-[#737373] bg-[#fffcf2] p-4 rounded-[13px] resize-none'
+            <textarea type="text" className='lg:h-[150px] mt-2 w-full border-[1px] text-[#737373] placeholder:text-[#737373] border-[#737373] bg-[#fffcf2] p-4 rounded-[13px] resize-none'
             placeholder='Enter your name*'
             required
             />
