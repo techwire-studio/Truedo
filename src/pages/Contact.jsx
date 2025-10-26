@@ -9,7 +9,7 @@ import mobile from "../assets/call-outline.png"
 
 const Contact = () => {
   return (
-    <div className='lg:px-8  lg:py-48 flex h-fit lg:gap-8'>
+    <div className='lg:px-8  lg:pt-40 lg:pb-20 flex h-fit lg:gap-8'>
         <div className='lg:w-[45%] w-full relative'>
             <img className='w-full lg:h-[400px]' src={image1} alt="" />
             <div className='lg:w-[48%] absolute right-0 -mt-16  rounded-[23px] border-[1px] border-black h-16 bg-white flex  justify-center items-center lg:gap-10'>

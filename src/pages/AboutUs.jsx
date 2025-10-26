@@ -25,7 +25,7 @@ const services = [
 
 const AboutUs = () => {
   return (
-    <div className='lg:px-8 lg:pt-48'>
+    <div className='lg:px-8 lg:pt-40'>
         {/* Section 1 */}
         <div>
             <h1 className='font-work font-medium lg:text-[118px] -tracking-wider leading-none p-0 m-0'>ABOUT</h1>
