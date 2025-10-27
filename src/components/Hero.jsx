@@ -11,14 +11,14 @@ const Hero = () => {
       </div>
 
       {/* Text at bottom-left */}
-      <div className="absolute bottom-16 left-8 z-10 text-[#FFFCF2] uppercase">
+      <div className="absolute bottom-8 left-8 z-10 text-[#FFFCF2] uppercase">
         <p className="text-lg lg:text-[22px] font-helvetica">
           Crafting Interiors That Define <br />
           Modern Living
         </p>
       </div>
       {/* Text at bottom-left */}
-      <div className="absolute bottom-16 right-8 z-10 text-[#FFFCF2] uppercase text-right space-y-2 lg:text-[14px]">
+      <div className="absolute bottom-8 right-8 z-10 text-[#FFFCF2] uppercase text-right space-y-2 lg:text-[14px]">
         <p>MODULAR KITCHENS</p>
         <p className="">HOME INTERIORS</p>
         <p>WARDROBES</p>

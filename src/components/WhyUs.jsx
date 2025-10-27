@@ -4,9 +4,48 @@ import "swiper/css";
 
 import board from "../assets/board.png";
 
+const slidesData = [
+  {
+    id: 1,
+    title: "Flexible Payment Options",
+    desc: "Easy EMIs designed to make your dream home achievable without stress.",
+    icon: board,
+  },
+  {
+    id: 2,
+    title: "Transparent Pricing",
+    desc: "No hidden costs — full clarity at every stage of your project.",
+    icon: board,
+  },
+  {
+    id: 3,
+    title: "Factory finished products",
+    desc: "Crafted with precision in controlled environments for flawless finish, lasting durability, -every Truedo product reflects consistency & perfection.",
+    icon: board,
+  },
+  {
+    id: 4,
+    title: "On-Time Delivery",
+    desc: "We respect your schedule, ensuring timely handover without compromising quality.",
+    icon: board,
+  },
+  {
+    id: 5,
+    title: "Guaranteed Quality & Warranty",
+    desc: "All work and materials come with reliable warranties, so your interiors stand the test of time.",
+    icon: board,
+  },
+  {
+    id: 6,
+    title: "Price match guaraNtee",
+    desc: "Price match to a valid quote in comparison with a branded player and for exact scope.",
+    icon: board,
+  },
+];
+
 export default function WhyUs() {
   return (
-    <div className="h-screen py-10 font-work lg:px-8">
+    <div className="py-10 font-work lg:px-8">
       <div className="bg-[#CD8B3B] h-full rounded-[51px] px-16 py-16 overflow-hidden">
         {/* Header */}
         <div className="flex gap-4 mb-8">
@@ -21,39 +60,36 @@ export default function WhyUs() {
         </div>
 
         {/* Horizontal Infinite Auto Scroll Swiper */}
-        <div className="w-full h-[70%] font-work">
-          <Swiper
-            modules={[Autoplay]}
-            direction="horizontal"
-            slidesPerView={3}
-            spaceBetween={30}
-            loop={true} // infinite loop
-            autoplay={{
-              delay: 0, // continuous movement
-              disableOnInteraction: false,
-              pauseOnMouseEnter: false,
-            }}
-            speed={5000} // smooth scroll speed (higher = slower)
-            className="h-full"
-          >
-            {[...Array(6)].map((_, i) => (
-              <SwiperSlide key={i}>
-                <div className="flex flex-col gap-4 justify-center items-center rounded-[15.01px] bg-[#FFFCF2] text-black h-full px-8">
-                  <div className="rounded-full h-32 w-32 bg-[#CD8B3B] flex justify-center items-center">
-                    <img className="h-[80px] w-auto" src={board} alt="icon" />
-                  </div>
-                  <h4 className="text-black lg:text-[28px] font-medium">
-                    EASY EMI’s
-                  </h4>
-                  <p className="text-center text-[#737373] font-medium lg:text-[16px]">
-                    Lets you repay big purchases in small, fixed monthly amounts,
-                    making expenses easier to manage.
-                  </p>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+         <div className="w-full h-[400px] font-work">
+      <Swiper
+        modules={[Autoplay]}
+        direction="horizontal"
+        slidesPerView={3}
+        spaceBetween={30}
+        loop={true}
+        autoplay={{
+          delay: 0,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false,
+        }}
+        speed={5000}
+        className="h-full rounded-[15.01px]"
+      >
+        {slidesData.map((slide) => (
+          <SwiperSlide key={slide.id}>
+            <div className="flex flex-col gap-4 py-8 items-center rounded-[15.01px] bg-[#FFFCF2] text-black h-full px-8">
+              <div className="rounded-full h-32 w-32 bg-[#CD8B3B] flex justify-center items-center">
+                <img className="h-[80px] w-auto" src={slide.icon} alt={slide.title} />
+              </div>
+              <h4 className="text-black lg:text-[28px] font-work font-medium text-center uppercase leading-[26.3px] mt-4">{slide.title}</h4>
+              <p className="text-center text-[#737373] font-work font-medium lg:text-[16px] leading-[26px] mt-2">
+                {slide.desc}
+              </p>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
       </div>
     </div>
   );
