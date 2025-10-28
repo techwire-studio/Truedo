@@ -162,7 +162,7 @@ const Featured = () => {
   }, [currentSlide]);
 
   return (
-    <div className="pb-8 lg:px-8">
+    <div className="pb-8 lg:px-8 hidden lg:block" >
       {/* Scroll space - reduced for easier navigation */}
       <div style={{ height: `${(featuredProducts.length - 1) * 50}vh` }}>
         <div

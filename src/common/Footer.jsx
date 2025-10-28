@@ -14,13 +14,13 @@ const Footer = () => {
 
   return (
     <div className='w-full bg-[#202B1A] px-8 py-12 font-dm'>
-      <div className='flex justify-between'>
+      <div className='flex flex-col lg:flex-row justify-between'>
         {/* Left side */}
-        <div className='flex flex-col gap-8'>
-          <img className='h-[120px] w-auto' src={footerLogo} alt="" />
+        <div className='flex flex-col gap-4 lg:gap-8'>
+          <img className='h-[120px] w-[200px] lg:h-[120px] lg:w-auto' src={footerLogo} alt="" />
           <span className='flex gap-2 text-white items-center font-dm text-[14px]'>
-            <img src={pin} alt="" />
-            <p className='leading-4'>
+            <img className='h-6 lg:h-6' src={pin} alt="" />
+            <p className='leading-4 text-[12px] lg:text-[16px]'>
               594/1, Kodigehalli - Thindlu <br /> Main Road, Bengaluru- 560092.
             </p>
           </span>
@@ -38,7 +38,7 @@ const Footer = () => {
 
         {/* Right side */}
         <div>
-          <div className="font-semibold space-y-3">
+          <div className="font-semibold space-y-3 mt-8 lg:mt-0">
             {[
               { name: "Instagram", url: "https://instagram.com/yourusername" },
               { name: "Facebook", url: "https://facebook.com/yourusername" },

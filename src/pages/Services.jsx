@@ -72,25 +72,13 @@ const services2 = [
       "Design your personal sanctuary with elegant and peaceful bedroom solutions.",
     img: img4,
   },
-  // {
-  //   heading: "Office Solutions",
-  //   content:
-  //     "Boost productivity with thoughtfully designed workspace environments.",
-  //   img: img5,
-  // },
-  // {
-  //   heading: "Bathroom Renovations",
-  //   content:
-  //     "Luxurious bathroom designs that combine comfort with contemporary aesthetics.",
-  //   img: img6,
-  // },
 ];
 
 const Services = () => {
   return (
-    <div className="w-full font-helvetica lg:px-8">
+    <div className="w-full font-helvetica lg:px-8 px-6">
       {/* Top Content */}
-      <div className="w-full pt-40 mb-20">
+      <div className="w-full lg:pt-40 lg:mb-20 pt-24 lg:py-0">
         <div className="flex items-start justify-between flex-wrap gap-8">
           <div className="text-[#202B1A] font-bold text-4xl lg:text-5xl flex items-center gap-2">
             <p>OUR</p>
@@ -104,7 +92,7 @@ const Services = () => {
               your lifestyle with elegance and ease.
             </p>
             <button
-              className="relative mt-8 font-dm bg-[#CD8A38] text-white px-8 py-4 font-semibold tracking-wide hover:bg-[#b57830] transition-colors"
+              className="relative mt-4 lg:mt-8 font-dm bg-[#CD8A38] text-white px-8 py-4 font-semibold tracking-wide hover:bg-[#b57830] transition-colors"
               style={{
                 clipPath:
                   "polygon(0 0, calc(100% - 0px) 0, 100% 70%, calc(100% - 10px) 100%, 0 100%)",
@@ -118,63 +106,94 @@ const Services = () => {
       </div>
 
       {/* Vertical Stacking Slider */}
-      <div
-        className="relative  mb-0"
-        style={{ height: `${(services.length - 1) * 90}vh` }}
-      >
+      <div className="hidden lg:block">
+        <div
+          className="relative  mb-0"
+          style={{ height: `${(services.length - 1) * 90}vh` }}
+        >
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="sticky"
+              style={{ top: `${index * 120}px` }}
+            >
+              <div
+                className={`flex gap-8 lg:gap-20 flex-col lg:flex-row bg-[#fffcf2] py-6 border-t`}
+              >
+                <div className="lg:w-1/2 flex flex-col">
+                  <span className="text-black font-semibold text-3xl lg:text-5xl mb-6 flex items-center gap-2 font-work ">
+                    {service.heading}
+                  </span>
+                  <p className="text-black text-xl lg:text-3xl leading-relaxed mt-20">
+                    {service.content}
+                  </p>
+                </div>
+                <div className="lg:w-1/2 rounded-lg">
+                  <img className="w-full" src={service.img} alt="" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div
+          className="relative  mb-0"
+          style={{ height: `${(services2.length - 1) * 90}vh` }}
+        >
+          {services2.map((service, index) => (
+            <div
+              key={index}
+              className="sticky"
+              style={{ top: `${index * 100}px` }}
+            >
+              <div
+                className={`flex gap-8 lg:gap-20 flex-col lg:flex-row bg-[#fffcf2] py-6 border-t`}
+              >
+                <div className="lg:w-1/2 flex flex-col">
+                  <span className="text-black font-semibold text-3xl lg:text-5xl mb-6 flex items-center gap-2 font-work ">
+                    {service.heading}
+                  </span>
+                  <p className="text-black text-xl lg:text-3xl leading-relaxed mt-20">
+                    {service.content}
+                  </p>
+                </div>
+                <div className="lg:w-1/2 rounded-lg">
+                  <img className="w-full" src={service.img} alt="" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile */}
+      <div className="lg:hidden bg-black/80 my-8 rounded-[24px] p-4 space-y-4">
         {services.map((service, index) => (
           <div
+            className="p-2 rounded-[24px] bg-[#f5f5f5] relative overflow-hidden"
             key={index}
-            className="sticky"
-            style={{ top: `${index * 120}px` }}
           >
-            <div
-              className={`flex gap-8 lg:gap-20 flex-col lg:flex-row bg-[#fffcf2] py-6 border-t`}
-            >
-              <div className="lg:w-1/2 flex flex-col">
-                <span className="text-black font-semibold text-3xl lg:text-5xl mb-6 flex items-center gap-2 font-work ">
+            {/* Image container with overlay */}
+            <div className="relative rounded-[24px] overflow-hidden">
+              {/* Image */}
+              <img
+                className="w-full h-full object-cover rounded-[24px]"
+                src={service.img}
+                alt={service.heading}
+              />
+
+              {/* Black Overlay only on image */}
+              <div className="absolute inset-0 bg-black/30"></div>
+
+              {/* Heading at bottom (on top of image) */}
+              <div className="absolute bottom-0 left-0 w-full z-10 p-4">
+                <p className="text-white text-[28px] font-semibold">
                   {service.heading}
-                </span>
-                <p className="text-black text-xl lg:text-3xl leading-relaxed mt-20">
-                  {service.content}
                 </p>
-              </div>
-              <div className="lg:w-1/2 rounded-lg">
-                <img className="w-full" src={service.img} alt="" />
               </div>
             </div>
           </div>
         ))}
       </div>
-       <div
-        className="relative  mb-0"
-        style={{ height: `${(services2.length - 1) * 90}vh` }}
-      >
-        {services2.map((service, index) => (
-          <div
-            key={index}
-            className="sticky"
-            style={{ top: `${index * 100}px` }}
-          >
-            <div
-              className={`flex gap-8 lg:gap-20 flex-col lg:flex-row bg-[#fffcf2] py-6 border-t`}
-            >
-              <div className="lg:w-1/2 flex flex-col">
-                <span className="text-black font-semibold text-3xl lg:text-5xl mb-6 flex items-center gap-2 font-work ">
-                  {service.heading}
-                </span>
-                <p className="text-black text-xl lg:text-3xl leading-relaxed mt-20">
-                  {service.content}
-                </p>
-              </div>
-              <div className="lg:w-1/2 rounded-lg">
-                <img className="w-full" src={service.img} alt="" />
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      
     </div>
   );
 };
