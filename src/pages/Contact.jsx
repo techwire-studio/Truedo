@@ -13,11 +13,11 @@ import bgImage from "../assets/asabsdfihsdlbdshfled-3.png";
 
 const Contact = () => {
   return (
-    <div className="lg:px-8  lg:pt-40 lg:pb-20 flex h-fit lg:gap-8">
+    <div className="lg:px-8 px-6 pt-24  lg:pt-40 pb-16 lg:pb-20 flex flex-col lg:flex-row h-fit lg:gap-8">
       <div className="lg:w-[45%] w-full relative">
         <img className="w-full lg:h-[400px]" src={image1} alt="" />
         <div
-          className="lg:w-[48%] absolute right-0 -mt-16 rounded-[23px] border border-black h-16 
+          className="lg:w-[48%] w-[48%] absolute right-0 -mt-12 lg:-mt-16 rounded-[17px] lg:rounded-[23px] border border-black h-12  lg:h-16 
              flex justify-center items-center lg:gap-10  overflow-hidden"
         >
           <img
@@ -25,7 +25,7 @@ const Contact = () => {
             alt="Background"
             className="absolute inset-0 w-full h-full opacity-30"
           />
-          <div className="relative z-10 flex justify-center items-center gap-10">
+          <div className="relative z-10 flex justify-center items-center gap-4 lg:gap-10">
             <img src={instagram} alt="Instagram" />
             <img src={linkedien} alt="LinkedIn" />
             <img src={facebook} alt="Facebook" />
@@ -33,16 +33,16 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="w-full border-[#737373] border-[1px] rounded-[28px] mt-6 grid lg:grid-cols-2  p-12 gap-y-6">
+        <div className="w-full border-[#737373] border-[1px] rounded-[28px] mt-6 grid lg:grid-cols-2 grid-cols-2 p-6 lg:p-12 gap-y-6 lg:gap-y-6">
           <div className="">
             <div className="bg-black w-fit p-2 rounded-[17px]">
               <img className="h-8 w-8" src={mobile} alt="" />
             </div>
             <p className="font-work font-medium lg:text-[16px] mt-2">Call Us</p>
-            <p className="font-dm font-semibold text-[#737373] lg:text-[14px] mt-2">
+            <p className="font-dm font-semibold text-[#737373] text-[12px] lg:text-[14px] mt-2">
               Mon - Fri (10AM- 7PM)
             </p>
-            <p className="font-dm font-semibold text-[#737373] lg:text-[14px]">
+            <p className="font-dm font-semibold text-[#737373] text-[12px] lg:text-[14px]">
               Mon - Fri (10AM- 7PM)
             </p>
           </div>
@@ -50,11 +50,11 @@ const Contact = () => {
             <div className="bg-black w-fit p-2 rounded-[17px]">
               <img className="h-8 w-8" src={whatsapp} alt="" />
             </div>
-            <p className="font-work font-medium lg:text-[16px] mt-2">Chat Support</p>
-            <p className="font-dm font-semibold text-[#737373] lg:text-[14px] mt-2">
+            <p className="font-work font-medium lg:text-[16px] text-[16px] mt-2">Chat Support</p>
+            <p className="font-dm font-semibold text-[#737373] text-[12px] lg:text-[14px] mt-2">
               Chat to our customer 
             </p>
-            <p className="font-dm font-semibold text-[#737373] lg:text-[14px]">
+            <p className="font-dm font-semibold text-[#737373] text-[12px] lg:text-[14px]">
               representative (24*7)
             </p>
           </div>
@@ -63,13 +63,13 @@ const Contact = () => {
               <img className="h-8 w-8" src={location} alt="" />
             </div>
             <p className="font-work font-medium lg:text-[16px] mt-2">Visit site</p>
-            <p className="font-dm font-semibold text-[#737373] lg:text-[14px] mt-2">
+            <p className="font-dm font-semibold text-[#737373] text-[12px] lg:text-[14px] mt-2">
               594/1, Kodigehalli - 
             </p>
-            <p className="font-dm font-semibold text-[#737373] lg:text-[14px]">
+            <p className="font-dm font-semibold text-[#737373] text-[12px] lg:text-[14px]">
               Thindlu Main Road, 
             </p>
-            <p className="font-dm font-semibold text-[#737373] lg:text-[14px]">
+            <p className="font-dm font-semibold text-[#737373] text-[12px] lg:text-[14px]">
               Bengaluru- 560092.
             </p>
           </div>
@@ -78,26 +78,26 @@ const Contact = () => {
               <img className="h-8 w-8" src={email} alt="" />
             </div>
             <p className="font-work font-medium lg:text-[16px] mt-2">Email Us</p>
-            <p className="font-dm font-semibold text-[#737373] lg:text-[14px] mt-2">
+            <p className="font-dm font-semibold text-[#737373] text-[12px] lg:text-[14px] mt-2">
               594/1, Kodigehalli - 
             </p>
-            <p className="font-dm font-semibold text-[#737373] lg:text-[14px]">
+            <p className="font-dm font-semibold text-[#737373] text-[12px] lg:text-[14px]">
               Thindlu Main Road, 
             </p>
-            <p className="font-dm font-semibold text-[#737373] lg:text-[14px]">
+            <p className="font-dm font-semibold text-[#737373] text-[12px] lg:text-[14px]">
               Bengaluru- 560092.
             </p>
           </div>
         </div>
       </div>
-      <div className="lg:w-[55%] rounded-[28px] shadow-[0px_4px_7px_0px_rgba(0,0,0,0.25)] lg:py-8 lg:px-4">
-        <h3 className="font-work font-medium text-center lg:text-[40px] leading-none">
+      <div className="lg:w-[55%] mt-8 lg:mt-0 rounded-[28px] shadow-[0px_4px_7px_0px_rgba(0,0,0,0.25)] py-6 px-4 lg:py-8 lg:px-4">
+        <h3 className="font-work font-medium text-center text-[28px] lg:text-[40px] leading-none">
           Contact Us
         </h3>
-        <p className="font-work text-[#737373] text-center font-medium">
+        <p className="font-work text-[#737373] text-[16px]  text-center font-medium">
           Our friendly team would love to hear from you.
         </p>
-        <form className="mt-8 font-work bg-[#fffcf2] lg:space-y-8" action="">
+        <form className="mt-6 lg:mt-8 font-work bg-[#fffcf2] space-y-4 lg:space-y-8" action="">
           <div>
             <label className="font-medium" htmlFor="">
               Name*
@@ -137,7 +137,7 @@ const Contact = () => {
             </label>
             <textarea
               type="text"
-              className="lg:h-[150px] mt-2 w-full border-[1px] text-[#737373] placeholder:text-[#737373] border-[#737373] bg-[#fffcf2] p-4 rounded-[13px] resize-none"
+              className="lg:h-[150px] h-[150px] mt-2 w-full border-[1px] text-[#737373] placeholder:text-[#737373] border-[#737373] bg-[#fffcf2] p-4 rounded-[13px] resize-none"
               placeholder="Type your message"
               required
             />
