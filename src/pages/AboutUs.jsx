@@ -10,17 +10,21 @@ const experiences = [exp1,exp1,exp1,exp1]
 
 const services = [
     {
-        heading:"Modular Kitchen",
-        description:"Our modular kitchen designs blend style, functionality, and smart space utilization. With sleek layouts, high-quality finishes, and innovative storage solutions,"
+        heading:"Quality",
+        description:"Quality without compromise in every grain, every gloss.From premium materials to meticulous finishes, we ensure excellence that endures."
     },
     {
-        heading:"Modular Kitchen",
-        description:"Our modular kitchen designs blend style, functionality, and smart space utilization. With sleek layouts, high-quality finishes, and innovative storage solutions,"
+        heading:"Transparency",
+        description:"Transparency that builds trust — with honest pricing, clear timelines, and no hidden surprises."
     },
     {
-        heading:"Modular Kitchen",
-        description:"Our modular kitchen designs blend style, functionality, and smart space utilization. With sleek layouts, high-quality finishes, and innovative storage solutions,"
-    }
+        heading:"INNOVATION",
+        description:"Innovation that inspires — where modern technology meets smart, purposeful design."
+    },
+    {
+        heading:"CUSTOMER FIRST",
+        description:"Customer First — because every home should reflect your story, your style, and your way of living."
+    },
 ]
 
 const AboutUs = () => {
@@ -77,13 +81,15 @@ const AboutUs = () => {
         {/* Section 3 */}
         <div className='w-full flex flex-col lg:flex-row lg:gap-16'>
             <div className='lg:w-[50%]'>
-                    <h4 className='font-work font-semibold text-[42px] lg:text-[56px] -tracking-[6%]'>True Services</h4>
+                    <h4 className='font-work font-semibold text-[42px] lg:text-[56px] -tracking-[6%]'>True Promise</h4>
                     <div className=' mt-2'>
-                        <p className='text-[#737373] font-work font-medium lg:text-[24px]'>At Truedo Living Spaces, we transform houses into  timeless homes.</p>
-                        <p className='text-[#737373] font-work font-medium text-[18px] lg:text-[24px]'>At Truedo Living Spaces, we transform houses into  timeless homes.</p>
+                        <p className='font-dm lg:text-[18px] lg:w-[80%]'>
+                            Interiors designed to respond to the way you live. From concept to completion, Truedo blends function, artistry, and precision to craft spaces that feel effortless, personal, and timeless.
+
+                        </p>
                     </div>
                     <div className='mt-6 lg:mt-12'>
-                        <img className='w-full lg:h-[350px] object-cover rounded-[21px]' src={service} alt="" />
+                        <img className='w-full lg:h-[400px] object-cover rounded-[21px]' src={service} alt="" />
                     </div>
             </div>
             <div className='lg:w-1/2 flex flex-col gap-8 lg:gap-0 mt-8 lg:mt-0 justify-between'>
@@ -91,7 +97,7 @@ const AboutUs = () => {
                     services.map((service,index) => (
                         <div key={index}>
                             <h5 className='font-dm font-bold text-[24px] lg:text-[28px] tracking-[4px]'>{service.heading}</h5>
-                            <p className='font-dm tracking-[8%] lg:leading-[31px] lg:text-[22px] mt-2 lg:mt-6 font-light'>{service.description}</p>
+                            <p className='font-dm tracking-[8%] lg:leading-[31px] lg:text-[22px] mt-2 lg:mt-4 font-light text-[#737373]'>{service.description}</p>
                         </div>
                     ))
                 }
