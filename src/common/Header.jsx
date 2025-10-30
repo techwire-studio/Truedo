@@ -9,10 +9,13 @@ import blackLogo2 from "../assets/logoMain2Black.png";
 
 const Header = () => {
   const location = useLocation();
-  const isServices = location.pathname === "/our-services";
-  const isContact = location.pathname === "/contact";
-  const isAbout = location.pathname === "/about-us";
+  const path = location.pathname;
+  // const isServices = location.pathname === "/our-services";
+  // const isContact = location.pathname === "/contact";
+  // const isAbout = location.pathname === "/about-us";
   const isHome = location.pathname === "/";
+
+    const isActive = (route) => path === route;
 
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -43,19 +46,58 @@ const Header = () => {
   return (
     <div>
       <div
-        className={`hidden  font-dm uppercase absolute top-16 left-1/2 z-20 px-16 py-4 gap-16 font-medium lg:flex items-center justify-center transform -translate-x-1/2 rounded-[14px] 
+      className={`hidden font-dm uppercase absolute top-16 left-1/2 z-20 px-16 py-4 gap-16 font-medium lg:flex items-center justify-center transform -translate-x-1/2 rounded-[14px] 
       ${
-        isServices || isContact || isAbout
+        isActive("/our-services") ||
+        isActive("/contact") ||
+        isActive("/about-us")
           ? "border-black text-black"
           : "border-[#FFFCF2] text-[#FFFCF2]"
-      } 
+      }
       border-[1px] lg:text-[14px]`}
+    >
+      <a
+        href="/"
+        className={`transition-all duration-200 ${
+          isActive("/") ? "font-bold text-[16px] underline underline-offset-4" : ""
+        }`}
       >
-        <a href="/">Home</a>
-        <a href="/our-services">Services</a>
-        <a href="/about-us">About Us</a>
-        <a href="/contact">Contacts</a>
-      </div>
+        Home
+      </a>
+
+      <a
+        href="/our-services"
+        className={`transition-all duration-200 ${
+          isActive("/our-services")
+            ? "font-bold text-[16px] underline underline-offset-4"
+            : ""
+        }`}
+      >
+        Services
+      </a>
+
+      <a
+        href="/about-us"
+        className={`transition-all duration-200 ${
+          isActive("/about-us")
+            ? "font-bold text-[16px] underline underline-offset-4"
+            : ""
+        }`}
+      >
+        About Us
+      </a>
+
+      <a
+        href="/contact"
+        className={`transition-all duration-200 ${
+          isActive("/contact")
+            ? "font-bold text-[16px] underline underline-offset-4"
+            : ""
+        }`}
+      >
+        Contacts
+      </a>
+    </div>
       {/* Mobile */}
       <>
         {/* ===== Header Bar ===== */}

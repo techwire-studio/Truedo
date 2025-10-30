@@ -1,6 +1,7 @@
 import React from 'react'
 import { useLocation } from "react-router-dom"
-import footerLogo from "../assets/footerLogo.png"
+import footerLogo1 from "../assets/footerLogo1.png"
+import footerLogo2 from "../assets/footerLogo2.png"
 import pin from "../assets/Pin.png"
 import arrow from "../assets/Arrow 1.png"
 import arrowUp from "../assets/Arrow 5.png"
@@ -17,7 +18,11 @@ const Footer = () => {
       <div className='flex flex-col lg:flex-row justify-between'>
         {/* Left side */}
         <div className='flex flex-col gap-4 lg:gap-8'>
-          <img className='h-[120px] w-[200px] lg:h-[120px] lg:w-auto' src={footerLogo} alt="" />
+          {/* <img className='h-[120px] w-[200px] lg:h-[120px] lg:w-auto' src={footerLogo} alt="" /> */}
+          <div>
+            <img className='lg:h-[70px] lg:w-[70px]' src={footerLogo1} alt="" />
+          <img className='lg:h-[50px] lg:w-[250px] mt-2' src={footerLogo2} alt="" />
+          </div>
           <span className='flex gap-2 text-white items-center font-dm text-[14px]'>
             <img className='h-6 lg:h-6' src={pin} alt="" />
             <p className='leading-4 text-[12px] lg:text-[16px]'>
