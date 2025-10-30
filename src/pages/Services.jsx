@@ -1,76 +1,81 @@
 import React from "react";
-
+import logo from "../assets/serviveLogo.png"
 import img1 from "../assets/service1.png";
 import img2 from "../assets/service2.png";
 import img3 from "../assets/service3.png";
 import img4 from "../assets/service4.png";
 import img5 from "../assets/service5.png";
 import img6 from "../assets/service6.png";
+import img7 from "../assets/service7.png";
+import img8 from "../assets/service8.png";
+import img9 from "../assets/service9.png";
+import img10 from "../assets/service10.png";
 import Arrow1 from "../assets/serviceArrow.png";
 import Arrow2 from "../assets/serviceArrrow2.png";
 
 const services = [
   {
-    heading: "Modular Furniture",
+    heading: "Modular Kitchens",
     content:
-      "Each design is tailored to your lifestyle, ensuring convenience meets elegance.",
+      "Thoughtfully designed for how you live, cook, and connect — modern kitchens that feel as good as they look.",
     img: img1,
   },
   {
-    heading: "Kitchen Design",
+    heading: "Modular Wardrobes",
     content:
-      "Transform your cooking space into a masterpiece of functionality and style.",
+      "Sleek, spacious, and factory-finished wardrobes that blend elegance with everyday comfort.",
     img: img2,
   },
   {
-    heading: "Living Spaces",
+    heading: "Onsite Carpentry",
     content:
-      "Create comfortable and inviting areas perfect for relaxation and entertainment.",
+      "Onsite execution, precise detailing, and design-led craftsmanship for spaces that feel built around you.",
     img: img3,
   },
   {
-    heading: "Bedroom Interiors",
+    heading: "Windows & Doors",
     content:
-      "Design your personal sanctuary with elegant and peaceful bedroom solutions.",
+      "Precision-engineered UPVC & aluminum frames that balance design and durability.",
     img: img4,
   },
   {
-    heading: "Office Solutions",
+    heading: "Home Automation & Lighting",
     content:
-      "Boost productivity with thoughtfully designed workspace environments.",
+      "From sunrise scenes to evening calm — Your home, perfectly in sync.Smart lighting that moves with you.",
     img: img5,
   },
-  // {
-  //   heading: "Bathroom Renovations",
-  //   content:
-  //     "Luxurious bathroom designs that combine comfort with contemporary aesthetics.",
-  //   img: img6,
-  // },
+  
 ];
 const services2 = [
   {
-    heading: "Modular Furniture",
+    heading: "Curtains & Wallpapers",
     content:
-      "Each design is tailored to your lifestyle, ensuring convenience meets elegance.",
-    img: img1,
+      "Functional elegance for every space. Curtains and wallpapers designed for comfort and style.",
+    img: img6,
   },
   {
-    heading: "Kitchen Design",
+    heading: "False Ceilings",
     content:
-      "Transform your cooking space into a masterpiece of functionality and style.",
-    img: img2,
+      "Clean lines, precise installation. False ceilings that enhance ambience and acoustics.",
+    img: img7,
   },
   {
-    heading: "Living Spaces",
+    heading: "Painting Services",
     content:
-      "Create comfortable and inviting areas perfect for relaxation and entertainment.",
-    img: img3,
+      "End-to-end renovation — from design to handover, we deliver ready-to-live homes, stress-free.",
+    img: img8,
   },
   {
-    heading: "Bedroom Interiors",
+    heading: "Flooring Solutions",
     content:
-      "Design your personal sanctuary with elegant and peaceful bedroom solutions.",
-    img: img4,
+      "Precision-laid surfaces, timeless appeal. Flooring solutions built to last beautifully.",
+    img: img9,
+  },
+  {
+    heading: "SOFAS & CHAIRS",
+    content:
+      "Whether it’s a statement armchair or a sectional sofa, Truedo creates seating that feels personal & timeless.",
+    img: img10,
   },
 ];
 
@@ -82,15 +87,16 @@ const Services = () => {
         <div className="flex items-start justify-between flex-wrap gap-8">
           <div className="text-[#202B1A] font-bold text-4xl lg:text-5xl flex items-center gap-2">
             <p>OUR</p>
-            <div className="h-12 w-14 bg-[#CD8A38] rounded-lg"></div>
+            <img className="h-[40px]" src={logo} alt="" />
             <p>SERVICES</p>
           </div>
           <div className="max-w-2xl">
-            <p className="text-[#202B1A] text-lg lg:text-xl leading-relaxed">
+            <p className="text-[#202B1A] text-[22px] font-helvetica">
               A creative team crafting interiors that blend beauty and function.
               From kitchens to full renovations, we design spaces that reflect
               your lifestyle with elegance and ease.
             </p>
+            
             <button
               className="relative mt-4 lg:mt-8 font-dm bg-[#CD8A38] text-white px-8 py-4 font-semibold tracking-wide hover:bg-[#b57830] transition-colors"
               style={{
@@ -109,55 +115,55 @@ const Services = () => {
       <div className="hidden lg:block">
         <div
           className="relative  mb-0"
-          style={{ height: `${(services.length - 1) * 90}vh` }}
+          style={{ height: `${(services.length - 1) * 70}vh` }}
         >
           {services.map((service, index) => (
             <div
               key={index}
               className="sticky"
-              style={{ top: `${index * 120}px` }}
+              style={{ top: `${index * 110}px` }}
             >
               <div
                 className={`flex gap-8 lg:gap-20 flex-col lg:flex-row bg-[#fffcf2] py-6 border-t`}
               >
-                <div className="lg:w-1/2 flex flex-col">
-                  <span className="text-black font-semibold text-3xl lg:text-5xl mb-6 flex items-center gap-2 font-work ">
+                <div className="lg:w-[50%] flex flex-col">
+                  <span className="text-black font-semibold text-[44px] mb-6 flex items-center gap-2 font-work ">
                     {service.heading}
                   </span>
-                  <p className="text-black text-xl lg:text-3xl leading-relaxed mt-20">
+                  <p className="text-black font-dm text-[24px] leading-[41px] w-[90%]  mt-8">
                     {service.content}
                   </p>
                 </div>
-                <div className="lg:w-1/2 rounded-lg">
-                  <img className="w-full" src={service.img} alt="" />
+                <div className="lg:w-[50%] overflow-hidden">
+                  <img className="w-full h-[350px] overflow-hidden" src={service.img} alt="" />
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <div
+       <div
           className="relative  mb-0"
-          style={{ height: `${(services2.length - 1) * 90}vh` }}
+          style={{ height: `${(services.length - 1) * 70}vh` }}
         >
           {services2.map((service, index) => (
             <div
               key={index}
               className="sticky"
-              style={{ top: `${index * 100}px` }}
+              style={{ top: `${index * 110}px` }}
             >
               <div
                 className={`flex gap-8 lg:gap-20 flex-col lg:flex-row bg-[#fffcf2] py-6 border-t`}
               >
-                <div className="lg:w-1/2 flex flex-col">
-                  <span className="text-black font-semibold text-3xl lg:text-5xl mb-6 flex items-center gap-2 font-work ">
+                <div className="lg:w-[50%] flex flex-col">
+                  <span className="text-black font-semibold text-[44px] mb-6 flex items-center gap-2 font-work ">
                     {service.heading}
                   </span>
-                  <p className="text-black text-xl lg:text-3xl leading-relaxed mt-20">
+                  <p className="text-black font-dm text-[24px] leading-[41px] w-[90%]  mt-8">
                     {service.content}
                   </p>
                 </div>
-                <div className="lg:w-1/2 rounded-lg">
-                  <img className="w-full" src={service.img} alt="" />
+                <div className="lg:w-[50%] overflow-hidden">
+                  <img className="w-full h-[350px] overflow-hidden" src={service.img} alt="" />
                 </div>
               </div>
             </div>

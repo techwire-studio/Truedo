@@ -3,6 +3,11 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 import board from "../assets/board.png";
+import coin from "../assets/coin-bag-line.png"
+import cart from "../assets/cart.png"
+import delivery from "../assets/delivery.png"
+import tick from "../assets/tick.png"
+import price from "../assets/pricetags-outline.png"
 
 const slidesData = [
   {
@@ -15,31 +20,31 @@ const slidesData = [
     id: 2,
     title: "Transparent Pricing",
     desc: "No hidden costs — full clarity at every stage of your project.",
-    icon: board,
+    icon: coin,
   },
   {
     id: 3,
     title: "Factory finished products",
     desc: "Crafted with precision in controlled environments for flawless finish, lasting durability, -every Truedo product reflects consistency & perfection.",
-    icon: board,
+    icon: cart,
   },
   {
     id: 4,
     title: "On-Time Delivery",
     desc: "We respect your schedule, ensuring timely handover without compromising quality.",
-    icon: board,
+    icon: delivery,
   },
   {
     id: 5,
     title: "Guaranteed Quality & Warranty",
     desc: "All work and materials come with reliable warranties, so your interiors stand the test of time.",
-    icon: board,
+    icon: tick,
   },
   {
     id: 6,
     title: "Price match guaraNtee",
     desc: "Price match to a valid quote in comparison with a branded player and for exact scope.",
-    icon: board,
+    icon: price,
   },
 ];
 
@@ -85,7 +90,7 @@ export default function WhyUs() {
                 <div className="flex flex-col gap-4 py-8 items-center rounded-[15.01px] bg-[#FFFCF2] text-black h-full px-8">
                   <div className="rounded-full h-20 w-20 lg:h-32 lg:w-32 bg-[#CD8B3B] flex justify-center items-center">
                     <img
-                      className="lg:h-[80px] h-[40px]  w-auto"
+                      className="lg:h-[60px] lg:w-[60px] h-[40px]  w-auto"
                       src={slide.icon}
                       alt={slide.title}
                     />

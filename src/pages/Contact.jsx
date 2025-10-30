@@ -23,7 +23,7 @@ const Contact = () => {
           <img
             src={bgImage}
             alt="Background"
-            className="absolute inset-0 w-full h-full"
+            className="absolute inset-0 w-full h-full opacity-30"
           />
           <div className="relative z-10 flex justify-center items-center gap-10">
             <img src={instagram} alt="Instagram" />

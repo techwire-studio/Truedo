@@ -4,15 +4,15 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import logo1 from "../assets/logoMain1.png";
 import logo2 from "../assets/logoMain2.png";
-import blackLogo1 from "../assets/logoMain1Black.png"
-import blackLogo2 from "../assets/logoMain2Black.png"
+import blackLogo1 from "../assets/logoMain1Black.png";
+import blackLogo2 from "../assets/logoMain2Black.png";
 
 const Header = () => {
   const location = useLocation();
   const isServices = location.pathname === "/our-services";
   const isContact = location.pathname === "/contact";
   const isAbout = location.pathname === "/about-us";
-  const isHome = location.pathname === "/"
+  const isHome = location.pathname === "/";
 
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -60,72 +60,71 @@ const Header = () => {
       <>
         {/* ===== Header Bar ===== */}
         <div
-  className={`lg:hidden flex items-center justify-between fixed left-0 w-full z-50 px-8 transition-all duration-300 ${
-    menuOpen
-      ? "bg-transparent py-0 top-8" 
-      : scrolled
-      ? isHome
-        ? "top-0 py-4 backdrop-blur-lg bg-black/50"
-        : "top-0 py-4 backdrop-blur-lg bg-white/70"
-      : isHome
-      ? "top-8 py-0 bg-transparent"
-      : "top-8 py-0 bg-transparent"
-  }`}
->
-      {/* Logo */}
-      <div className="flex items-center gap-2">
-        <img
-          className="w-[40px] h-[40px]"
-          src={isHome ? logo1 : blackLogo1}
-          alt="Logo 1"
-        />
-        <img
-          className="h-[30px] w-[150px]"
-          src={isHome ? logo2 : blackLogo2}
-          alt="Logo 2"
-        />
-      </div>
+          className={`lg:hidden flex items-center justify-between fixed left-0 w-full z-50 px-8 transition-all duration-300 ${
+            menuOpen
+              ? "bg-transparent py-0 top-8"
+              : scrolled
+              ? isHome
+                ? "top-0 py-4 backdrop-blur-lg bg-black/50"
+                : "top-0 py-4 backdrop-blur-lg bg-white/70"
+              : isHome
+              ? "top-8 py-0 bg-transparent"
+              : "top-8 py-0 bg-transparent"
+          }`}
+        >
+          {/* Logo */}
+          <div className="flex items-center gap-2">
+            <img
+              className="w-[30px] h-[30px]"
+              src={menuOpen ? logo1 : isHome ? logo1 : blackLogo1}
+              alt="Logo 1"
+            />
+            <img
+              className="h-[20px] w-[100px]"
+              src={menuOpen ? logo2 : isHome ? logo2 : blackLogo2}
+              alt="Logo 2"
+            />
+          </div>
 
-      {/* Menu / Close Button */}
-      <div
-        className="cursor-pointer transition-transform duration-300"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        {menuOpen ? (
-          // ❌ Close icon
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="2"
-            stroke={isHome ? "#fff" : "#000"}
-            className="w-10 h-10"
+          {/* Menu / Close Button */}
+          <div
+            className="cursor-pointer transition-transform duration-300"
+            onClick={() => setMenuOpen(!menuOpen)}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        ) : (
-          // ☰ Menu icon
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="2"
-            stroke={isHome ? "#fff" : "#000"}
-            className="w-10 h-10"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
-          </svg>
-        )}
-      </div>
-    </div>
+            {menuOpen ? (
+              // ❌ Close icon (always white when menuOpen)
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="#fff"
+                className="w-10 h-10"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke={isHome ? "#fff" : "#000"}
+                className="w-10 h-10"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            )}
+          </div>
+        </div>
 
         {/* ===== Full Screen Menu ===== */}
         <AnimatePresence>
@@ -135,7 +134,7 @@ const Header = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4 }}
-              className={`fixed font-dm  inset-0 uppercase bg-black/70 backdrop-blur-sm text-white flex flex-col justify-between pt-28 pb-8  z-40`}
+              className={`fixed font-dm  inset-0 uppercase bg-black/70 backdrop-blur-sm text-white flex flex-col justify-between pt-28 pb-4  z-40`}
             >
               {/* Menu Items */}
               <motion.ul

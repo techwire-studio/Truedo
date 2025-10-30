@@ -5,11 +5,11 @@ import serviceLogo from "../assets/serviveLogo.png";
 
 const servicesData = [
   { name: "Modular Furniture", image: serviceLogo },
-  { name: "Kitchen Design", image: serviceLogo },
-  { name: "Living Spaces", image: serviceLogo },
-  { name: "Bedroom Interiors", image: serviceLogo },
-  { name: "Office Solutions", image: serviceLogo },
-  { name: "Bathroom Renovations", image: serviceLogo },
+  { name: "Windows & Doors ", image: serviceLogo },
+  { name: "Onsite Carpentry", image: serviceLogo },
+  { name: "Curtains & Wallpapers", image: serviceLogo },
+  { name: "Home Automation & Lighting", image: serviceLogo },
+  { name: "Painting Services", image: serviceLogo },
 ];
 
 const services = [

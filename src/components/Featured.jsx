@@ -1,40 +1,32 @@
 import React, { useState, useEffect, useRef } from "react";
 
 import featured1 from "../assets/featured1.png";
-import featured2 from "../assets/featured2.png";
+import featured2 from "../assets/wardrobes.png"
+import featured3 from "../assets/windows.png"
 import arrow from "../assets/featuredArrow.png"
 
 const featuredProducts = [
   {
     title: "MODULAR KITCHEN",
     description:
-      "Our modular kitchen designs blend style, functionality, and smart space utilization. With sleek layouts, high-quality finishes, and innovative storage solutions, we create kitchens that make cooking and dining a joyful experience. Each design is tailored to your lifestyle, ensuring convenience meets elegance.",
+      "Truedo’s modular kitchens blend refined design with intelligent functionality.Each layout is crafted for efficiency and comfort — ensuring seamless use,premium finishes, and everyday elegance.",
     image: featured1,
   },
   {
-    title: "Wardrobes",
+    title: "WARDROBES",
     description:
-      "Maximize your space with our customized wardrobe solutions. From sliding to hinged designs, we offer wardrobes that are both stylish and practical. Crafted with precision and premium materials, our wardrobes enhance organization while adding sophistication to your interiors.",
-    image: featured2,
-  },
-  {
-    title: "Turnkey Renovation",
-    description:
-      "Transform your home or office with our hassle-free turnkey renovation services. From planning and design to execution and finishing, we manage every detail with care. Our expert team ensures on-time delivery, superior quality, and a smooth renovation journey that brings your vision to life.",
+      "Truedo’s wardrobes combine modern aesthetics with ergonomic detailing.Every unit is tailored for smarter storage and visual balance — delivering durability, precision, and timeless appeal.",
     image: featured1,
   },
+  
   {
-    title: "Painting",
+    title: "WINDOWS & DOORS",
     description:
-      "Refresh and redefine your spaces with our professional painting services. We use premium paints and expert techniques to deliver flawless finishes, vibrant colors, and long-lasting results. Whether it’s a bold new look or subtle elegance, our painting solutions add character and charm to your interiors.",
-    image: featured2,
+      "Truedo’s UPVC and aluminum systems combine design and durability.Each frame is engineered for performance and precision — ensuring security, efficiency, and timeless aesthetics.",
+    image: featured3,
   },
-  {
-    title: "Materials",
-    description:
-      "We source and provide high-quality materials that form the backbone of every great design. From durable laminates and premium plywood to fittings and finishes, our material selection ensures strength, beauty, and longevity in every project. Quality is at the core of everything we build.",
-    image: featured1,
-  },
+  
+  
 ];
 
 const Featured = () => {
@@ -161,10 +153,12 @@ const Featured = () => {
     };
   }, [currentSlide]);
 
+  const scrollHeight = (featuredProducts.length - 1) * 70;
+
   return (
     <div className="pb-8 lg:px-8 hidden lg:block" >
       {/* Scroll space - reduced for easier navigation */}
-      <div style={{ height: `${(featuredProducts.length - 1) * 50}vh` }}>
+      <div style={{ height: `${scrollHeight}vh` }}>
         <div
           ref={containerRef}
           className="sticky top-0 w-full h-screen flex items-center"
@@ -190,12 +184,12 @@ const Featured = () => {
                 }}
               >
                 <div className="lg:w-[30%] text-[rgb(255,252,242)] mt-8">
-                  <span className="flex items-center gap-4"><img src={arrow} alt="" /> <h2 className="lg:text-[32px] font-bold">{product.title} </h2></span>
-                  <p className="mt-8 lg:text-[22px] leading-relaxed">
+                  <span className="flex items-start gap-4"><img src={arrow} alt="" /> <h2 className="lg:text-[36px] font-bold font-work leading-none">{product.title} </h2></span>
+                  <p className="mt-8 font-dm leading-[37px] lg:text-[24px]">
                     {product.description}
                   </p>
                   <button
-                    className="mt-10 relative font-dm bg-[#CD8A38] text-white px-4 py-2 font-semibold tracking-wide hover:bg-[#b57830] transition-colors"
+                    className="mt-16 text-[18px] relative font-dm bg-[#CD8A38] text-white px-8 py-4 font-semibold tracking-wide hover:bg-[#b57830] transition-colors"
                     style={{
                       clipPath:
                         "polygon(0 0, calc(100% - 0px) 0, 100% 70%, calc(100% - 10px) 100%, 0 100%)",

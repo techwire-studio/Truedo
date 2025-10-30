@@ -24,6 +24,7 @@ const HomeText = () => {
             <img className="h-[50px] w-[70px] ml-2" src={image1} alt="" />
           </span>
         </div>
+         
       </div>
     </div>
   );
