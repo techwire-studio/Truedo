@@ -96,7 +96,7 @@ const AboutUs = () => {
                 {
                     services.map((service,index) => (
                         <div key={index}>
-                            <h5 className='font-dm font-bold text-[24px] lg:text-[28px] tracking-[4px]'>{service.heading}</h5>
+                            <h5 className='font-dm font-bold text-[24px] lg:text-[28px] tracking-[4px] uppercase'>{service.heading}</h5>
                             <p className='font-dm tracking-[8%] lg:leading-[31px] lg:text-[22px] mt-2 lg:mt-4 font-light text-[#737373]'>{service.description}</p>
                         </div>
                     ))

@@ -91,7 +91,7 @@ const Services = () => {
             <p>SERVICES</p>
           </div>
           <div className="max-w-2xl">
-            <p className="text-[#202B1A] text-[22px] font-helvetica">
+            <p className="text-[#202B1A] text-[16px] lg:text-[22px] font-helvetica">
               A creative team crafting interiors that blend beauty and function.
               From kitchens to full renovations, we design spaces that reflect
               your lifestyle with elegance and ease.
@@ -176,7 +176,7 @@ const Services = () => {
             <div>
               {
               services.map((service,index) => (
-                <div className="border-t-[1px] border-black py-8" key={index}>
+                <div className="border-t-[1px] border-black/40 py-8" key={index}>
                     <div className="flex items-center gap-4">
                       <img className="h-14 w-20" src={service.img} alt="" />
                       <h4 className="font-work font-semibold text-[24px] leading-[24px]">{service.heading}</h4>
@@ -191,7 +191,7 @@ const Services = () => {
             <div>
               {
               services2.map((service,index) => (
-                <div className="border-t-[1px] border-black py-8" key={index}>
+                <div className="border-t-[1px] border-black/40 py-8" key={index}>
                     <div className="flex items-center gap-4">
                       <img className="h-14 w-20" src={service.img} alt="" />
                       <h4 className="font-work font-semibold text-[24px] leading-[24px]">{service.heading}</h4>

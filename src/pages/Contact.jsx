@@ -23,13 +23,13 @@ const Contact = () => {
           <img
             src={bgImage}
             alt="Background"
-            className="absolute inset-0 w-full h-full opacity-30"
+            className="absolute inset-0 w-full h-full opacity-40"
           />
           <div className="relative z-10 flex justify-center items-center gap-4 lg:gap-10">
-            <img src={instagram} alt="Instagram" />
-            <img src={linkedien} alt="LinkedIn" />
-            <img src={facebook} alt="Facebook" />
-            <img src={youtube} alt="YouTube" />
+            <img className="h-6 lg:h-8" src={instagram} alt="Instagram" />
+            <img className="h-6 lg:h-8" src={linkedien} alt="LinkedIn" />
+            <img className="h-6 lg:h-8" src={facebook} alt="Facebook" />
+            <img className="h-6 lg:h-8" src={youtube} alt="YouTube" />
           </div>
         </div>
 

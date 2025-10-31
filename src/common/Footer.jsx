@@ -20,8 +20,8 @@ const Footer = () => {
         <div className='flex flex-col gap-4 lg:gap-8'>
           {/* <img className='h-[120px] w-[200px] lg:h-[120px] lg:w-auto' src={footerLogo} alt="" /> */}
           <div>
-            <img className='lg:h-[70px] lg:w-[70px]' src={footerLogo1} alt="" />
-          <img className='lg:h-[50px] lg:w-[250px] mt-2' src={footerLogo2} alt="" />
+            <img className='lg:h-[70px] lg:w-[70px] h-[60px] w-[60px]' src={footerLogo1} alt="" />
+          <img className='lg:h-[50px] h-[40px] w-[240px] lg:w-[250px] mt-2' src={footerLogo2} alt="" />
           </div>
           <span className='flex gap-2 text-white items-center font-dm text-[14px]'>
             <img className='h-6 lg:h-6' src={pin} alt="" />
