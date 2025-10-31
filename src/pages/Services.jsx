@@ -172,33 +172,37 @@ const Services = () => {
       </div>
 
       {/* Mobile */}
-      <div className="lg:hidden bg-black/80 my-8 rounded-[24px] p-4 space-y-4">
-        {services.map((service, index) => (
-          <div
-            className="p-2 rounded-[24px] bg-[#f5f5f5] relative overflow-hidden"
-            key={index}
-          >
-            {/* Image container with overlay */}
-            <div className="relative rounded-[24px] overflow-hidden">
-              {/* Image */}
-              <img
-                className="w-full h-full object-cover rounded-[24px]"
-                src={service.img}
-                alt={service.heading}
-              />
-
-              {/* Black Overlay only on image */}
-              <div className="absolute inset-0 bg-black/30"></div>
-
-              {/* Heading at bottom (on top of image) */}
-              <div className="absolute bottom-0 left-0 w-full z-10 p-4">
-                <p className="text-white text-[28px] font-semibold">
-                  {service.heading}
-                </p>
-              </div>
+      <div className="lg:hidden py-10">
+            <div>
+              {
+              services.map((service,index) => (
+                <div className="border-t-[1px] border-black py-8" key={index}>
+                    <div className="flex items-center gap-4">
+                      <img className="h-14 w-20" src={service.img} alt="" />
+                      <h4 className="font-work font-semibold text-[24px] leading-[24px]">{service.heading}</h4>
+                    </div>
+                    <div className="mt-2">
+                      <p className="font-dm text-black"> {service.content}</p>
+                    </div>
+                </div>
+              ))
+            }
             </div>
-          </div>
-        ))}
+            <div>
+              {
+              services2.map((service,index) => (
+                <div className="border-t-[1px] border-black py-8" key={index}>
+                    <div className="flex items-center gap-4">
+                      <img className="h-14 w-20" src={service.img} alt="" />
+                      <h4 className="font-work font-semibold text-[24px] leading-[24px]">{service.heading}</h4>
+                    </div>
+                    <div className="mt-2">
+                      <p className="font-dm text-black"> {service.content}</p>
+                    </div>
+                </div>
+              ))
+            }
+            </div>
       </div>
     </div>
   );
