@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation,Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 import logo1 from "../assets/logoMain1.png";
@@ -105,6 +105,8 @@ const Header = () => {
     `}
   >
     {/* Logo */}
+   <div className="flex items-center gap-2">
+  <Link to="/">
     <div className="flex items-center gap-2">
       <img
         className="w-[30px] h-[30px]"
@@ -117,6 +119,8 @@ const Header = () => {
         alt="Logo 2"
       />
     </div>
+  </Link>
+</div>
 
     {/* Menu / Close Button */}
     <div
