@@ -1,4 +1,7 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+
 import logo from "../assets/serviveLogo.png"
 import img1 from "../assets/service1.png";
 import img2 from "../assets/service2.png";
@@ -83,33 +86,55 @@ const Services = () => {
   return (
     <div className="w-full font-helvetica lg:px-8 px-6">
       {/* Top Content */}
-      <div className="w-full lg:pt-40 lg:mb-20 pt-24 lg:py-0">
-        <div className="flex items-start justify-between flex-wrap gap-8">
-          <div className="text-[#202B1A] font-bold text-4xl lg:text-5xl flex items-center gap-2">
-            <p>OUR</p>
-            <img className="h-[40px]" src={logo} alt="" />
-            <p>SERVICES</p>
-          </div>
-          <div className="max-w-2xl">
-            <p className="text-[#202B1A] text-[16px] lg:text-[22px] font-helvetica">
-              A creative team crafting interiors that blend beauty and function.
-              From kitchens to full renovations, we design spaces that reflect
-              your lifestyle with elegance and ease.
-            </p>
-            
-            <button
-              className="relative mt-4 lg:mt-8 font-dm bg-[#CD8A38] text-white px-8 py-4 font-semibold tracking-wide hover:bg-[#b57830] transition-colors"
-              style={{
-                clipPath:
-                  "polygon(0 0, calc(100% - 0px) 0, 100% 70%, calc(100% - 10px) 100%, 0 100%)",
-              }}
-            >
-              CONTACT US
-              <span className="ml-2 inline-block -rotate-45">→</span>
-            </button>
-          </div>
+     <div className="w-full lg:pt-40 lg:mb-20 pt-24 lg:py-0">
+      <div className="flex items-start justify-between flex-wrap gap-8">
+
+        {/* TITLE */}
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="text-[#202B1A] font-bold text-4xl lg:text-5xl flex items-center gap-2"
+        >
+          <p>OUR</p>
+          <img className="h-[40px]" src={logo} alt="" />
+          <p>SERVICES</p>
+        </motion.div>
+
+        {/* RIGHT SIDE CONTENT */}
+        <div className="max-w-2xl">
+          <motion.p
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.15, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="text-[#202B1A] text-[16px] lg:text-[22px] font-helvetica"
+          >
+            A creative team crafting interiors that blend beauty and function.
+            From kitchens to full renovations, we design spaces that reflect
+            your lifestyle with elegance and ease.
+          </motion.p>
+
+          <motion.button
+            initial={{ opacity: 0, scale: 0.85 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="relative mt-4 lg:mt-8 font-dm bg-[#CD8A38] text-white px-8 py-4 font-semibold tracking-wide hover:bg-[#b57830] transition-colors"
+            style={{
+              clipPath:
+                "polygon(0 0, calc(100% - 0px) 0, 100% 70%, calc(100% - 10px) 100%, 0 100%)",
+            }}
+          >
+            CONTACT US
+            <span className="ml-2 inline-block -rotate-45">→</span>
+          </motion.button>
         </div>
       </div>
+    </div>
+
 
       {/* Vertical Stacking Slider */}
       <div className="hidden lg:block">

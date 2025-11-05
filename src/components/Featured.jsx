@@ -183,14 +183,14 @@ const Featured = () => {
                     top: "80px",
                   }}
                 >
-                  <div className="lg:w-[30%] text-[rgb(255,252,242)] mt-8">
+                  <div className="lg:w-[40%] text-[rgb(255,252,242)] mt-8">
                     <span className="flex items-start gap-4">
                       <img src={arrow} alt="" />{" "}
                       <h2 className="lg:text-[36px] font-bold font-work leading-none">
                         {product.title}{" "}
                       </h2>
                     </span>
-                    <p className="mt-8 font-dm leading-[37px] lg:text-[24px]">
+                    <p className="mt-8 font-dm leading-[37px] lg:text-[22px]">
                       {product.description}
                     </p>
                     <button
@@ -204,7 +204,7 @@ const Featured = () => {
                       <span className="ml-2 inline-block -rotate-45">→</span>
                     </button>
                   </div>
-                  <div className="lg:w-[70%] pb-20">
+                  <div className="lg:w-[60%] pb-20">
                     <div className="lg:w-[100%] flex items-center justify-center">
                       <img
                         className="max-h-[73vh] rounded-[35px] w-full object-cover transition-all duration-700"
