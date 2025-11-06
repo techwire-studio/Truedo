@@ -233,7 +233,7 @@ const Featured = () => {
                   <h5 className="text-white font-work font-semibold text-[24px]">
                     {product.title}
                   </h5>
-                  <p className="text-white font-work font-medium text-[16px] leading-none">
+                  <p className="text-white font-work font-medium text-[12px] leading-none">
                     {product.shortDescription}
                   </p>
                 </div>
