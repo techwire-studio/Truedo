@@ -91,10 +91,10 @@ const Services = () => {
 
         {/* TITLE */}
         <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
+          // initial={{ opacity: 0, y: 80 }}
+          // whileInView={{ opacity: 1, y: 0 }}
+          // transition={{ duration: 0.8, ease: "easeOut" }}
+          // viewport={{ once: true }}
           className="text-[#202B1A] font-bold text-4xl lg:text-5xl flex items-center gap-2"
         >
           <p>OUR</p>
@@ -105,10 +105,10 @@ const Services = () => {
         {/* RIGHT SIDE CONTENT */}
         <div className="max-w-2xl">
           <motion.p
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.15, ease: "easeOut" }}
-            viewport={{ once: true }}
+            // initial={{ opacity: 0, y: 60 }}
+            // whileInView={{ opacity: 1, y: 0 }}
+            // transition={{ duration: 0.9, delay: 0.15, ease: "easeOut" }}
+            // viewport={{ once: true }}
             className="text-[#202B1A] text-[16px] lg:text-[22px] font-helvetica"
           >
             A creative team crafting interiors that blend beauty and function.
@@ -117,11 +117,11 @@ const Services = () => {
           </motion.p>
 
           <motion.button
-            initial={{ opacity: 0, scale: 0.85 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
-            viewport={{ once: true }}
+            // initial={{ opacity: 0, scale: 0.85 }}
+            // whileInView={{ opacity: 1, scale: 1 }}
+            // whileHover={{ scale: 1.05 }}
+            // transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
+            // viewport={{ once: true }}
             className="relative mt-4 lg:mt-8 font-dm bg-[#CD8A38] text-white px-8 py-4 font-semibold tracking-wide hover:bg-[#b57830] transition-colors"
             style={{
               clipPath:

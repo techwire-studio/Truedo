@@ -12,12 +12,14 @@ const featuredProducts = [
     description:
       "Truedo’s modular kitchens blend refined design with intelligent functionality.Each layout is crafted for efficiency and comfort — ensuring seamless use,premium finishes, and everyday elegance.",
     image: featured1,
+    shortDescription: "Crafted for function, styled for life.",
   },
   {
     title: "WARDROBES",
     description:
       "Truedo’s wardrobes combine modern aesthetics with ergonomic detailing.Every unit is tailored for smarter storage and visual balance — delivering durability, precision, and timeless appeal.",
     image: featured2,
+    shortDescription: "Intelligent storage with seamless aesthetics.",
   },
 
   {
@@ -25,6 +27,7 @@ const featuredProducts = [
     description:
       "Truedo’s UPVC and aluminum systems combine design and durability.Each frame is engineered for performance and precision — ensuring security, efficiency, and timeless aesthetics.",
     image: featured3,
+    shortDescription: "Designed for comfort, detailed for distinction.",
   },
 ];
 
@@ -190,11 +193,11 @@ const Featured = () => {
                         {product.title}{" "}
                       </h2>
                     </span>
-                    <p className="mt-8 font-dm leading-[37px] lg:text-[22px]">
+                    <p className="mt-8 font-dm leading-[37px] tracking-wider lg:text-[22px]">
                       {product.description}
                     </p>
                     <button
-                      className="mt-16 text-[18px] relative font-dm bg-[#CD8A38] text-white px-8 py-4 font-semibold tracking-wide hover:bg-[#b57830] transition-colors"
+                      className="mt-0 absolute bottom-12  text-[18px]  font-dm bg-[#CD8A38] text-white px-8 py-4 font-semibold tracking-wide hover:bg-[#b57830] transition-colors"
                       style={{
                         clipPath:
                           "polygon(0 0, calc(100% - 0px) 0, 100% 70%, calc(100% - 10px) 100%, 0 100%)",
@@ -222,16 +225,21 @@ const Featured = () => {
       {/* Mobile */}
       <div className="px-6">
         <div className="lg:hidden px-6 py-6 space-y-8 bg-black/90 rounded-[38px] ">
-              {
-                featuredProducts.map((product,index) => (
-                  <div className="relative" key={index}>
-                      <img className="" src={product.image} alt="" />
-                      <div className="absolute inset-0   bg-black/40 overflow-hidden rounded-[20px]">
-                          <h5 className="text-white absolute bottom-0 p-4 font-work font-semibold text-[24px]">{product.title}</h5>
-                      </div>
-                  </div>
-                ))
-              }
+          {featuredProducts.map((product, index) => (
+            <div className="relative" key={index}>
+              <img className="" src={product.image} alt="" />
+              <div className="absolute inset-0   bg-black/40 overflow-hidden rounded-[20px]">
+                <div className="absolute bottom-0 p-4">
+                  <h5 className="text-white font-work font-semibold text-[24px]">
+                    {product.title}
+                  </h5>
+                  <p className="text-white font-work font-medium text-[16px] leading-none">
+                    {product.shortDescription}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

@@ -2,23 +2,28 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import serviceLogo from "../assets/serviveLogo.png";
+import serviceLogo2 from "../assets/servicelogo2.png"
+import serviceLogo3 from "../assets/serviceLogo3.png"
+import serviceLogo4 from "../assets/serviceLogo4.png";
+import serviceLogo5 from "../assets/serviceLogo5.png"
+import serviceLogo6 from "../assets/serviceLogo6.png"
 
 const servicesData = [
   { name: "Modular Furniture", image: serviceLogo },
-  { name: "Windows & Doors ", image: serviceLogo },
-  { name: "Onsite Carpentry", image: serviceLogo },
-  { name: "Curtains & Wallpapers", image: serviceLogo },
-  { name: "Home Automation & Lighting", image: serviceLogo },
+  { name: "Windows & Doors ", image: serviceLogo2 },
+  { name: "Onsite Carpentry", image: serviceLogo3 },
+  { name: "Curtains & Wallpapers", image: serviceLogo4 },
+  { name: "Home Automation & Lighting", image: serviceLogo5 },
   { name: "Painting Services", image: serviceLogo },
 ];
 
 const services = [
   { name: "Modular Furniture", image: serviceLogo },
-  { name: "Kitchen Design", image: serviceLogo },
-  { name: "Living Spaces", image: serviceLogo },
-  { name: "Bedroom Interiors", image: serviceLogo },
-  { name: "Office Solutions", image: serviceLogo },
-  { name: "Bathroom Renovations", image: serviceLogo },
+  { name: "Windows & Doors", image: serviceLogo2 },
+  { name: "Onsite Carpentry", image: serviceLogo3 },
+  { name: "Curtains & Wallpapers", image: serviceLogo4 },
+  { name: "Home Automation & Lighting", image: serviceLogo5 },
+  { name: "Painting Services", image: serviceLogo6 },
 ];
 
 const fadeIn = {
@@ -180,7 +185,7 @@ const Services = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               initial={{ opacity: 0, scale: 0.85 }}
               transition={{ duration: 0.6 }}
-              className="h-[50px] w-[60px]"
+              className="h-[50px] w-[60px] rounded-[10px]"
               src={service.image}
               alt=""
             />

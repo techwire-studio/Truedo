@@ -176,12 +176,12 @@ const Header = () => {
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className="text-[24px] space-y-0 flex flex-col font-semibold px-8"
+          className="text-[24px] space-y-4 flex flex-col font-semibold px-8"
         >
-          <a href="/" className="hover:text-[#C8ACD6] duration-300">Home</a>
-          <a href="/our-services" className="hover:text-[#C8ACD6] duration-300">Services</a>
-          <a href="/about-us" className="hover:text-[#C8ACD6] duration-300">About us</a>
-          <a href="/contact" className="hover:text-[#C8ACD6] duration-300">Contact</a>
+          <a href="/" className=" duration-300">Home</a>
+          <a href="/our-services" className="duration-300">Services</a>
+          <a href="/about-us" className="duration-300">About us</a>
+          <a href="/contact" className="duration-300">Contact</a>
         </motion.ul>
 
         <div className="bg-white text-black text-[18px] font-semibold px-10 mx-auto py-3 rounded-full text-center w-[90%] cursor-pointer hover:bg-[#C8ACD6] hover:text-white duration-300">
