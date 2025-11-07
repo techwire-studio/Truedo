@@ -31,7 +31,7 @@ const Header = () => {
   return (
     <div>
       <div
-        className={`hidden font-dm uppercase absolute top-8 left-1/2 z-20 px-16 py-4 gap-16 font-medium lg:flex items-center justify-center transform -translate-x-1/2 rounded-[14px] 
+        className={`hidden font-dm uppercase absolute top-4 left-1/2 z-20 px-16 py-4 gap-16 font-medium lg:flex items-center justify-center transform -translate-x-1/2 rounded-[14px] 
       ${
         isActive("/our-services") ||
         isActive("/contact") ||
@@ -84,10 +84,10 @@ const Header = () => {
           className={`lg:hidden flex items-center justify-between  left-0 w-full z-50 px-8 transition-all duration-300 
       ${
         menuOpen
-          ? "fixed top-8 bg-transparent py-0"
+          ? "fixed top-6 bg-transparent py-0"
           : isHome
-          ? "absolute top-8 py-0 bg-transparent"
-          : "absolute top-8 py-0 bg-transparent"
+          ? "fixed top-6 py-0 bg-transparent"
+          : "fixed top-6 py-0 bg-transparent"
       }
     `}
         >

@@ -13,22 +13,22 @@ const Hero = () => {
     <div className="w-full ">
       {/* ✅ DESKTOP */}
       <div
-        className="hidden lg:flex relative w-full min-h-screen items-center justify-center"
+        className="hidden lg:flex relative w-full h-screen items-center justify-center"
         style={{
           background:
             "linear-gradient(180deg, rgba(32, 43, 26, 1) 0%, rgba(255, 252, 242, 1) 100%)",
         }}
       >
         {/* CONTENT */}
-        <div className="absolute inset-0 flex flex-col items-center  gap-6 px-6 pt-24">
+        <div className="absolute inset-0 flex flex-col items-center  gap-6 px-6 pt-20">
           <img
-            className="w-[40%]  object-contain"
+            className="w-[80%] h-[150px]  object-contain"
             src={logo}
             alt="Logo"
           />
 
           <img
-            className="w-[75%] lg:h-[500px] object-contain"
+            className="w-[90%] lg:h-[500px]"
             src={hero}
             alt="Hero Design"
           />
