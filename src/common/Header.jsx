@@ -81,15 +81,19 @@ const Header = () => {
       <div>
         {/* ===== Header Bar ===== */}
         <div
-          className={`lg:hidden flex items-center justify-between  left-0 w-full z-50 px-8 transition-all duration-300 
+          className={`lg:hidden flex items-center justify-between  left-0 w-full z-50 px-6 transition-all duration-300 backdrop-blur-sm 
       ${
         menuOpen
-          ? "fixed top-6 bg-transparent py-0"
+          ? "fixed top-0 bg-transparent py-3"
           : isHome
-          ? "fixed top-6 py-0 bg-transparent"
-          : "fixed top-6 py-0 bg-transparent"
+          ? "fixed top-0 py-3 bg-transparent"
+          : "fixed top-0 py-3 bg-transparent"
       }
+      
     `}
+    style={{
+      background:"linear-gradient(180deg,rgba(0, 0, 0, 0.67) 0%, rgba(0, 0, 0, 0.49) 50%, rgba(0, 0, 0, 0) 100%)"
+    }}
         >
           {/* Logo */}
           <div className="flex items-center gap-2">
@@ -97,12 +101,12 @@ const Header = () => {
               <div className="flex items-center gap-2">
                 <img
                   className="w-[30px] h-[30px]"
-                  src={menuOpen ? logo1 : isHome ? logo1 : blackLogo1}
+                  src={menuOpen ? logo1 : isHome ? logo1 : logo1}
                   alt="Logo 1"
                 />
                 <img
                   className="h-[20px] w-[100px]"
-                  src={menuOpen ? logo2 : isHome ? logo2 : blackLogo2}
+                  src={menuOpen ? logo2 : isHome ? logo2 : logo2}
                   alt="Logo 2"
                 />
               </div>
@@ -135,7 +139,7 @@ const Header = () => {
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth="2"
-                stroke={isHome ? "#fff" : "#000"}
+                stroke={isHome ? "#fff" : "#fff"}
                 className="w-10 h-10"
               >
                 <path

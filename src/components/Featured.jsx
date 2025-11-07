@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 
 import featured1 from "../assets/featured1.png";
-import featured2 from "../assets/wardrobes.png";
-import featured3 from "../assets/windows.png";
+import featured2 from "../assets/service2.png";
+import featured3 from "../assets/service4.png";
+import featured4 from "../assets/featuredMobile1.png"
+import featured5 from "../assets/featuredMobile2.png"
+import featured6 from "../assets/featuredMobile3.png"
 import arrow from "../assets/featuredArrow.png";
 import { div } from "framer-motion/client";
 
@@ -27,6 +30,30 @@ const featuredProducts = [
     description:
       "Truedo’s UPVC and aluminum systems combine design and durability.Each frame is engineered for performance and precision — ensuring security, efficiency, and timeless aesthetics.",
     image: featured3,
+    shortDescription: "Designed for comfort, detailed for distinction.",
+  },
+];
+const featuredProductsMobile = [
+  {
+    title: "MODULAR KITCHEN",
+    description:
+      "Truedo’s modular kitchens blend refined design with intelligent functionality.Each layout is crafted for efficiency and comfort — ensuring seamless use,premium finishes, and everyday elegance.",
+    image: featured4,
+    shortDescription: "Crafted for function, styled for life.",
+  },
+  {
+    title: "WARDROBES",
+    description:
+      "Truedo’s wardrobes combine modern aesthetics with ergonomic detailing.Every unit is tailored for smarter storage and visual balance — delivering durability, precision, and timeless appeal.",
+    image: featured5,
+    shortDescription: "Intelligent storage with seamless aesthetics.",
+  },
+
+  {
+    title: "WINDOWS & DOORS",
+    description:
+      "Truedo’s UPVC and aluminum systems combine design and durability.Each frame is engineered for performance and precision — ensuring security, efficiency, and timeless aesthetics.",
+    image: featured6,
     shortDescription: "Designed for comfort, detailed for distinction.",
   },
 ];
@@ -210,7 +237,7 @@ const Featured = () => {
                   <div className="lg:w-[60%] pb-20">
                     <div className="lg:w-[100%] flex items-center justify-center">
                       <img
-                        className="max-h-[73vh] rounded-[35px] w-full object-cover transition-all duration-700"
+                        className="h-[540px] rounded-[35px] w-full  transition-all duration-700"
                         src={product.image}
                         alt={product.title}
                       />
@@ -225,10 +252,10 @@ const Featured = () => {
       {/* Mobile */}
       <div className="px-2">
         <div className="lg:hidden px-6 py-6 space-y-8 bg-black/90 rounded-[38px] ">
-          {featuredProducts.map((product, index) => (
+          {featuredProductsMobile.map((product, index) => (
             <div className="relative" key={index}>
-              <img className="" src={product.image} alt="" />
-              <div className="absolute inset-0   bg-black/40 overflow-hidden rounded-[20px]">
+              <img className="rounded-[24px]" src={product.image} alt="" />
+              <div className="absolute inset-0    bg-black/20 overflow-hidden rounded-[20px]">
                 <div className="absolute bottom-0 p-4">
                   <h5 className="text-white font-work font-semibold text-[24px]">
                     {product.title}

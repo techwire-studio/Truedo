@@ -10,6 +10,7 @@ export default {
   dm: ['"DM Sans"', 'sans-serif'],
   work: ['"Work Sans"', 'sans-serif'],
    helvetica: ["Inter", "Helvetica", "Arial", "sans-serif"],
+   prata: ["Prata", 'sans-serif']
 }
 
     },

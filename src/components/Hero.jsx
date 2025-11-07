@@ -47,9 +47,9 @@ const Hero = () => {
         {/* CONTENT */}
         <div className="relative w-full flex flex-col items-center  gap-6 px-0 py-0 pt-0">
           {/* Logo */}
-          <h3 className="absolute text-white z-10 text-center font-bold text-[44px] leading-none pt-44">Where Precision <br />
+          <h3 className="absolute text-white z-10 text-center font-bold text-[38px] leading-[55px] tracking-[2px] pt-44 font-prata">Where Precision <br />
 Meets Warmth</h3>
-          <img className="absolute z-20 bottom-2 w-[95%]" src={group} alt="" />
+          <img className="absolute z-20 bottom-0 w-[98%]" src={group} alt="" />
           {/* Hero Graphic */}
           <img
             className="w-full"
