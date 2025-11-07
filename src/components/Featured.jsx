@@ -223,7 +223,7 @@ const Featured = () => {
         </div>
       </div>
       {/* Mobile */}
-      <div className="px-6">
+      <div className="px-2">
         <div className="lg:hidden px-6 py-6 space-y-8 bg-black/90 rounded-[38px] ">
           {featuredProducts.map((product, index) => (
             <div className="relative" key={index}>

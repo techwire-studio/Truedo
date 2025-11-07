@@ -5,6 +5,7 @@ import footerLogo2 from "../assets/footerLogo2.png"
 import pin from "../assets/Pin.png"
 import arrow from "../assets/Arrow 1.png"
 import arrowUp from "../assets/Arrow 5.png"
+import logoGroup from "../assets/logoGroup.png"
 
 const Footer = () => {
   const location = useLocation()
@@ -17,11 +18,12 @@ const Footer = () => {
     <div className='w-full bg-[#202B1A] px-8 py-12 font-dm'>
       <div className='flex flex-col lg:flex-row justify-between'>
         {/* Left side */}
-        <div className='flex flex-col gap-4 lg:gap-8'>
+        <div className='flex flex-col gap-6 lg:gap-8'>
           {/* <img className='h-[120px] w-[200px] lg:h-[120px] lg:w-auto' src={footerLogo} alt="" /> */}
           <div>
-            <img className='lg:h-[70px] lg:w-[70px] h-[60px] w-[60px]' src={footerLogo1} alt="" />
-          <img className='lg:h-[50px] h-[40px] w-[240px] lg:w-[250px] mt-2' src={footerLogo2} alt="" />
+            {/* <img className='lg:h-[70px] lg:w-[70px] h-[60px] w-[60px]' src={footerLogo1} alt="" />
+          <img className='lg:h-[50px] h-[40px] w-[240px] lg:w-[250px] mt-2' src={footerLogo2} alt="" /> */}
+          <img className='lg:h-[70px] h-[60px] lg:w-auto' src={logoGroup} alt="" />
           </div>
           <span className='flex gap-2 text-white items-center font-dm text-[14px]'>
             <img className='h-6 lg:h-6' src={pin} alt="" />
@@ -57,7 +59,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 group cursor-pointer"
               >
-                <p className="text-white font-dm text-[32px] transition-colors duration-300 group-hover:text-[#CD8B3B]">
+                <p className="text-white font-dm text-[24px] transition-colors duration-300 group-hover:text-[#CD8B3B]">
                   {item.name}
                 </p>
                 <img

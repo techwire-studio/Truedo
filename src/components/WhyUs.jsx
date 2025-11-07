@@ -72,7 +72,7 @@ export default function WhyUs() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className="py-10 font-work px-6 lg:px-8"
+      className="pt-10 font-work px-6 lg:px-8"
     >
       <motion.div
         variants={fadeInUp}

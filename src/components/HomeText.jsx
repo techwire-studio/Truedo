@@ -74,12 +74,12 @@ const HomeText = () => {
 
       <div className="lg:w-1/2 flex flex-col lg:items-end text-right">
         <div ref={headingRef} className="w-fit">
-          <p className="text-[40px] font-bold font-helvetica leading-tight tracking-tight">
+          <p className="text-[36px] lg:text-[40px] font-bold font-helvetica leading-tight tracking-tight">
             Shaping Spaces &
           </p>
 
           <span className="flex items-start justify-start lg:justify-end">
-            <p className="text-[40px] font-bold font-helvetica leading-tight tracking-tight">
+            <p className=" text-[36px] lg:text-[40px] font-bold font-helvetica leading-tight tracking-tight">
               Lifestyles
             </p>
             <img

@@ -3,31 +3,32 @@ import React from "react";
 import bg from "../assets/Rectangle 13.png";
 import logo from "../assets/logoLarge.png";
 import hero from "../assets/heroNewDesign.png";
-import logoMobile from "../assets/logoLargeMobile.png";
-import heroMobile from "../assets/heroMobileNewDesign.png";
-import bgMobile from "../assets/Rectangle 14.png";
+import group from "../assets/Group.png"
+import heroMobile from "../assets/homeHeroBg.png";
+import bgMobile from "../assets/Rectangle 15.png";
+
 
 const Hero = () => {
   return (
-    <div className="w-full overflow-hidden">
-
+    <div className="w-full ">
       {/* ✅ DESKTOP */}
-      <div className="hidden lg:flex relative w-full items-center justify-center">
-        <img
-          className="w-full h-screen object-cover"
-          src={bg}
-          alt="Background"
-        />
-
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-10 px-6 mt-32">
+      <div
+        className="hidden lg:flex relative w-full min-h-screen items-center justify-center"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(32, 43, 26, 1) 0%, rgba(255, 252, 242, 1) 100%)",
+        }}
+      >
+        {/* CONTENT */}
+        <div className="absolute inset-0 flex flex-col items-center  gap-6 px-6 pt-24">
           <img
-            className="w-[75%] max-w-[650px] object-contain"
+            className="w-[40%]  object-contain"
             src={logo}
             alt="Logo"
           />
 
           <img
-            className="w-[80%] max-w-[900px] object-contain"
+            className="w-[75%] lg:h-[500px] object-contain"
             src={hero}
             alt="Hero Design"
           />
@@ -35,32 +36,26 @@ const Hero = () => {
       </div>
 
       {/* ✅ MOBILE FIXED */}
-      <div className="lg:hidden relative w-full h-fit flex items-center justify-center">
-        
+      <div className="lg:hidden relative w-full h-full  flex items-center justify-center">
         {/* BG */}
         <img
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 z-10 w-full  object-cover"
           src={bgMobile}
           alt="Background Mobile"
         />
 
         {/* CONTENT */}
-        <div className="relative w-full flex flex-col items-center justify-center gap-6 px-4 py-16 pt-36">
-
+        <div className="relative w-full flex flex-col items-center  gap-6 px-0 py-0 pt-0">
           {/* Logo */}
-          <img
-            className="w-[75%] max-w-[260px] object-contain"
-            src={logoMobile}
-            alt="Logo"
-          />
-
+          <h3 className="absolute text-white z-10 text-center font-bold text-[44px] leading-none pt-44">Where Precision <br />
+Meets Warmth</h3>
+          <img className="absolute z-20 bottom-2 w-[95%]" src={group} alt="" />
           {/* Hero Graphic */}
           <img
-            className="w-[90%] max-w-[450px] object-contain"
+            className="w-full"
             src={heroMobile}
             alt="Hero Mobile"
           />
-
         </div>
       </div>
     </div>

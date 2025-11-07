@@ -31,7 +31,7 @@ const Header = () => {
   return (
     <div>
       <div
-        className={`hidden font-dm uppercase absolute top-16 left-1/2 z-20 px-16 py-4 gap-16 font-medium lg:flex items-center justify-center transform -translate-x-1/2 rounded-[14px] 
+        className={`hidden font-dm uppercase absolute top-8 left-1/2 z-20 px-16 py-4 gap-16 font-medium lg:flex items-center justify-center transform -translate-x-1/2 rounded-[14px] 
       ${
         isActive("/our-services") ||
         isActive("/contact") ||

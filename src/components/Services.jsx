@@ -58,7 +58,7 @@ const Services = () => {
         {/* Title */}
         <motion.div
           variants={fadeIn}
-          className="flex items-center gap-1 font-bold text-[28px] lg:text-[40px]"
+          className="flex items-center gap-1 font-bold text-[26px] lg:text-[40px]"
         >
           <p className="text-[#202B1A]">Our</p>
           <motion.img
@@ -76,7 +76,7 @@ const Services = () => {
         <motion.button
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.96 }}
-          className="relative font-dm bg-[#CD8A38] text-white text-[12px] lg:text-[18px] px-4 py-2 font-semibold tracking-wide transition-colors"
+          className="relative font-dm bg-[#CD8A38] text-white text-[12px] lg:text-[18px] px-4 py-2 font-semibold tracking-normal transition-colors"
           style={{
             clipPath:
               "polygon(0 0, calc(100% - 0px) 0, 100% 70%, calc(100% - 10px) 100%, 0 100%)",
@@ -84,8 +84,8 @@ const Services = () => {
         >
           VIEW ALL
           <motion.span
-            animate={{ x: [0, 6, 0] }}
-            transition={{ duration: 1.4, repeat: Infinity }}
+            // animate={{ x: [0, 6, 0] }}
+            // transition={{ duration: 1.4, repeat: Infinity }}
             className="ml-2 inline-block -rotate-45"
           >
             →
@@ -141,7 +141,7 @@ const Services = () => {
                   group-hover:px-10 group-hover:scale-105"
                   >
                     {/* Arrow */}
-                    <motion.svg
+                    {/* <motion.svg
                       initial={{ opacity: 0, x: -20 }}
                       whileHover={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4 }}
@@ -156,7 +156,7 @@ const Services = () => {
                         strokeLinejoin="round"
                         d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
                       />
-                    </motion.svg>
+                    </motion.svg> */}
 
                     <span>{service.name}</span>
                   </h4>
