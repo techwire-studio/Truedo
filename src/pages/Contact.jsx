@@ -13,7 +13,7 @@ import bgImage from "../assets/asabsdfihsdlbdshfled-3.png";
 
 const Contact = () => {
   return (
-    <div className="lg:px-8 px-6 pt-24  lg:pt-40 pb-16 lg:pb-20 flex flex-col lg:flex-row h-fit lg:gap-8">
+    <div className="lg:px-8 px-6 pt-28  lg:pt-40 pb-16 lg:pb-20 flex flex-col lg:flex-row h-fit lg:gap-8">
       <div className="lg:w-[45%] w-full relative">
         <img className="w-full lg:h-[400px]" src={image1} alt="" />
         <div

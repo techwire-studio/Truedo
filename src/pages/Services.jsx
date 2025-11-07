@@ -86,7 +86,7 @@ const Services = () => {
   return (
     <div className="w-full font-helvetica lg:px-8 px-6">
       {/* Top Content */}
-     <div className="w-full lg:pt-40 lg:mb-20 pt-24 lg:py-0">
+     <div className="w-full lg:pt-40 lg:mb-20 pt-28 lg:py-0">
       <div className="flex items-start justify-between flex-wrap gap-8">
 
         {/* TITLE */}

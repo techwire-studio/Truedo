@@ -133,7 +133,7 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div ref={pageRef} className="lg:px-8 px-6 lg:pt-40 pt-24">
+    <div ref={pageRef} className="lg:px-8 px-6 lg:pt-40 pt-28">
       {/* Section 1 */}
       <div>
         <h1 className="about-head font-work font-medium text-[64px] lg:text-[118px] -tracking-wider leading-none p-0 m-0">
