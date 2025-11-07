@@ -218,7 +218,7 @@ const AboutUs = () => {
       {/* Section 3 */}
       <div className="w-full flex flex-col lg:flex-row lg:gap-16">
         <div className="lg:w-[50%]">
-          <h4 className="promise-heading font-work font-semibold text-[42px] lg:text-[56px] -tracking-[6%]">
+          <h4 className="promise-heading font-work font-semibold text-[42px] lg:text-[56px]">
             True Promise
           </h4>
 
@@ -239,7 +239,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="lg:w-1/2 flex flex-col gap-8 lg:gap-0 mt-8 lg:mt-0 justify-between">
+        <div className="lg:w-1/2 flex flex-col gap-8 lg:gap-0 mt-8 lg:mt-4 justify-between">
           {services.map((service, index) => (
               <div key={index} className="service-box">
               <h5 className="font-dm font-bold text-[24px] lg:text-[28px] tracking-[4px] uppercase">
@@ -259,7 +259,7 @@ const AboutUs = () => {
         <div className="w-full lg:w-fit text-center text-[#202B1A] font-semibold  text-[18px] lg:text-[28px]  font-dm rounded-[40px] lg:rounded-[60.74px] border-dashed border-[#202B1A] border-[1.22px] px-6 lg:px-16 pt-6 lg:pt-4 pb-8 lg:pb-6">
           Let’s bring your dream space to life
         </div>
-        <div className="absolute font-bold mt-20 lg:mt-28 bg-[#CD8A38] shadow-[0px_4.42px_9.02px_10.1px_rgba(255,176,4,0.2)] w-fit rounded-[25px] lg:rounded-[60.74px] text-[#f5f5f5] font-dm lg:text-[20px] px-10 lg:px-12 py-3 lg:py-4 lg:-rotate-3 hover:rotate-0 transition duration-300">
+        <div className="absolute font-bold mt-20 lg:mt-28 bg-[#CD8A38] shadow-[0px_4.42px_9.02px_10.1px_rgba(255,176,4,0.2)] w-fit rounded-[25px] lg:rounded-[60.74px] text-[#f5f5f5] font-dm lg:text-[20px] px-10 lg:px-12 py-3 lg:py-4 lg:-rotate-2 hover:rotate-0 transition duration-300">
           Request a Call Back
         </div>
       </div>
