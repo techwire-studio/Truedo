@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import logo1 from "../assets/logoMain1.png";
 import logo2 from "../assets/logoMain2.png";
-import blackLogo1 from "../assets/logoMain1Black.png";
+
+// import blackLogo1 from "../assets/logoMain1Black.png";
 import blackLogo2 from "../assets/logoMain2Black.png";
 
 const Header = () => {
@@ -30,7 +31,16 @@ const Header = () => {
 
   return (
     <div>
-      <div
+      <div>
+        <Link to="/">
+      <div className="cursor-pointer hidden font-dm uppercase absolute top-0 left-6 z-20 px-0 py-4 gap-2 items-center font-medium lg:flex ">
+        <img className="h-10 w-10" src={logo1} alt="" />
+
+        {/* ✅ If Home page → use homeLogo else → blackLogo2 */}
+        <img className="h-6" src={isHome ? logo2 : blackLogo2} alt="" />
+      </div>
+    </Link>
+        <div
         className={`hidden font-dm uppercase absolute top-4 left-1/2 z-20 px-16 py-4 gap-16 font-medium lg:flex items-center justify-center transform -translate-x-1/2 rounded-[14px] 
       ${
         isActive("/our-services") ||
@@ -42,14 +52,14 @@ const Header = () => {
        lg:text-[14px]`}
       >
         <a
-          href="/"
+          href="/about-us"
           className={`transition-all duration-200 ${
-            isActive("/") ? "font-bold text-[16px] " : "opacity-60"
+            isActive("/about-us") ? "font-bold text-[16px] " : "opacity-60"
           }`}
         >
-          Home
+          About Us
         </a>
-
+       
         <a
           href="/our-services"
           className={`transition-all duration-200 ${
@@ -58,15 +68,16 @@ const Header = () => {
         >
           Services
         </a>
-
-        <a
-          href="/about-us"
+           <a
+          href="/"
           className={`transition-all duration-200 ${
-            isActive("/about-us") ? "font-bold text-[16px] " : "opacity-60"
+            isActive("/") ? "font-bold text-[16px] " : "opacity-60"
           }`}
         >
-          About Us
+          Profile
         </a>
+
+        
 
         <a
           href="/contact"
@@ -74,8 +85,9 @@ const Header = () => {
             isActive("/contact") ? "font-bold text-[16px]" : "opacity-60"
           }`}
         >
-          Contacts
+          Contact Us
         </a>
+      </div>
       </div>
       {/* Mobile */}
       <div>
@@ -167,7 +179,7 @@ const Header = () => {
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6 }}
-                className="text-[24px] space-y-4 flex flex-col font-semibold px-8"
+                className="text-[24px] space-y-4 flex flex-col font-semibold px-6"
               >
                 <a href="/" className=" duration-300">
                   Home

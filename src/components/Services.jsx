@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import serviceLogo from "../assets/serviveLogo.png";
+import logo from "../assets/minimalist-kitchen-interior-design 3.png"
+import serviceLogo from "../assets/serviceLogo1.png";
 import serviceLogo2 from "../assets/servicelogo2.png"
 import serviceLogo3 from "../assets/serviceLogo3.png"
 import serviceLogo4 from "../assets/serviceLogo4.png";
@@ -60,15 +61,16 @@ const Services = () => {
           variants={fadeIn}
           className="flex items-center gap-1 font-bold text-[26px] lg:text-[40px]"
         >
-          <p className="text-[#202B1A]">Our</p>
+          
           <motion.img
             initial={{ rotate: -20, opacity: 0, scale: 0.6 }}
             whileInView={{ rotate: 0, opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, type: "spring" }}
             className="lg:h-[40px] h-[20px] lg:w-auto"
-            src={serviceLogo}
+            src={logo}
             alt="logo"
           />
+          <p className="text-[#202B1A]">Our</p>
           <p className="text-[#202B1A]">Services</p>
         </motion.div>
 
@@ -185,7 +187,7 @@ const Services = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               initial={{ opacity: 0, scale: 0.85 }}
               transition={{ duration: 0.6 }}
-              className="h-[50px] w-[60px] rounded-[10px]"
+              className="h-[50px] w-[70px] rounded-[10px]"
               src={service.image}
               alt=""
             />

@@ -201,7 +201,7 @@ const Services = () => {
             <div>
               {
               services.map((service,index) => (
-                <div className="border-t-[1px] border-black/40 py-8" key={index}>
+                <div className="border-t-[1px] border-black/20 py-8" key={index}>
                     <div className="flex items-center gap-4">
                       <img className="h-14 w-20" src={service.img} alt="" />
                       <h4 className="font-work font-semibold text-[24px] leading-[24px]">{service.heading}</h4>
@@ -216,7 +216,7 @@ const Services = () => {
             <div>
               {
               services2.map((service,index) => (
-                <div className="border-t-[1px] border-black/40 py-8" key={index}>
+                <div className="border-t-[1px] border-black/20 py-8" key={index}>
                     <div className="flex items-center gap-4">
                       <img className="h-14 w-20" src={service.img} alt="" />
                       <h4 className="font-work font-semibold text-[24px] leading-[24px]">{service.heading}</h4>
