@@ -60,7 +60,7 @@ const HomeText = () => {
   return (
     <div
       ref={containerRef}
-      className="w-full lg:pt-24 lg:pb-20 px-6 py-8 gap-8 lg:gap-0 flex flex-col lg:flex-row justify-between lg:px-8"
+      className="w-full lg:pt-24 lg:pb-24 px-6 py-8 gap-8 lg:gap-0 flex flex-col lg:flex-row justify-between lg:px-8"
     >
       <div ref={leftTextRef} className="lg:w-1/2">
         <p className="text-[#202B1A] lg:text-[20px] leading-tight font-work">

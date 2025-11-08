@@ -140,7 +140,7 @@ const Services = () => {
       <div className="hidden lg:block">
         <div
           className="relative  mb-0"
-          style={{ height: `${(services.length - 1) * 75}vh` }}
+          style={{ height: `${(services.length - 1) * 80}vh` }}
         >
           {services.map((service, index) => (
             <div
@@ -168,7 +168,7 @@ const Services = () => {
         </div>
        <div
           className="relative  mb-0"
-          style={{ height: `${(services.length - 1) * 75}vh` }}
+          style={{ height: `${(services.length - 1) * 80}vh` }}
         >
           {services2.map((service, index) => (
             <div
