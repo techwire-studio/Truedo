@@ -74,7 +74,11 @@ const Header = () => {
             Services
           </a>
 
-          <a href="/" className={`transition-all duration-200 opacity-60`}>
+          <a 
+          href="https://drive.google.com/file/d/1dFf9QhlYk-wcngq_PKxfsQ2G9yRAjqfy/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+          className={`transition-all duration-200 opacity-60`}>
             Profile
           </a>
 
@@ -189,14 +193,13 @@ const Header = () => {
                 <a href="/our-services" className="duration-300">
                   Services
                 </a>
-             <a
-  href="https://drive.google.com/file/d/1dFf9QhlYk-wcngq_PKxfsQ2G9yRAjqfy/view?usp=sharing"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Profile
-</a>
-
+                <a
+                  href="https://drive.google.com/file/d/1dFf9QhlYk-wcngq_PKxfsQ2G9yRAjqfy/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Profile
+                </a>
 
                 <a href="/contact" className="duration-300">
                   Contact Us
