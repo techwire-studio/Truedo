@@ -78,10 +78,19 @@ const Footer = () => {
             ))}
           </div>
 
-          <button className='bg-[#CD8A38]/25 text-white/75 font-dm font-semibold mt-8 px-8 py-2 text-[24px] flex items-center gap-4'>
-            Back To Top
-            <img src={arrowUp} alt="" />
-          </button>
+         <button
+  onClick={() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }}
+  className="bg-[#CD8A38]/25 text-white/75 font-dm font-semibold mt-8 px-8 py-2 text-[24px] flex items-center gap-4"
+>
+  Back To Top
+  <img src={arrowUp} alt="" />
+</button>
+
         </div>
       </div>
 

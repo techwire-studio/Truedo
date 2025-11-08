@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+import emailjs from "emailjs-com";
 
 import image1 from "../assets/contactNew.png";
 import instagram from "../assets/instagram.png";
@@ -12,6 +13,38 @@ import email from "../assets/email.png"
 import bgImage from "../assets/asabsdfihsdlbdshfled-3.png";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .send(
+        "service_dczvvp3",
+        "template_2yqn0fl",
+        formData,
+        "-KtqUA7HlskvXnw6g"
+      )
+      .then(
+        (result) => {
+          alert("Message sent successfully!");
+          setFormData({ name: "", email: "", phone: "", message: "" });
+        },
+        (error) => {
+          alert("Failed to send message. Please try again.");
+          console.log(error.text);
+        }
+      );
+  };
   return (
     <div className="lg:px-8 px-6 pt-28  lg:pt-40 pb-16 lg:pb-20 flex flex-col lg:flex-row h-fit lg:gap-8">
       <div className="lg:w-[45%] w-full relative">
@@ -42,9 +75,7 @@ const Contact = () => {
             <p className="font-dm font-semibold text-[#737373] text-[12px] lg:text-[14px] mt-2">
               Mon - Fri (10AM- 7PM)
             </p>
-            <p className="font-dm font-semibold text-[#737373] text-[12px] lg:text-[14px]">
-              Mon - Fri (10AM- 7PM)
-            </p>
+            
           </div>
           <div className="">
             <div className="bg-black w-fit p-2 rounded-[17px]">
@@ -55,7 +86,7 @@ const Contact = () => {
               Chat to our customer 
             </p>
             <p className="font-dm font-semibold text-[#737373] text-[12px] lg:text-[14px]">
-              representative (24*7)
+              representative 
             </p>
           </div>
           <div className="">
@@ -79,74 +110,83 @@ const Contact = () => {
             </div>
             <p className="font-work font-medium lg:text-[16px] mt-2">Email Us</p>
             <p className="font-dm font-semibold text-[#737373] text-[12px] lg:text-[14px] mt-2">
-              594/1, Kodigehalli - 
+              connect@truedoliving.com
             </p>
-            <p className="font-dm font-semibold text-[#737373] text-[12px] lg:text-[14px]">
-              Thindlu Main Road, 
-            </p>
-            <p className="font-dm font-semibold text-[#737373] text-[12px] lg:text-[14px]">
-              Bengaluru- 560092.
-            </p>
+            
           </div>
         </div>
       </div>
       <div className="lg:w-[55%] mt-8 lg:mt-0 rounded-[28px] shadow-[0px_4px_7px_0px_rgba(0,0,0,0.25)] py-6 px-4 lg:py-8 lg:px-4">
-        <h3 className="font-work font-medium text-center text-[28px] lg:text-[40px] leading-none">
-          Contact Us
-        </h3>
-        <p className="font-work text-[#737373] text-[16px]  text-center font-medium">
-          Our friendly team would love to hear from you.
-        </p>
-        <form className="mt-6 lg:mt-8 font-work bg-[#fffcf2] space-y-4 lg:space-y-8" action="">
-          <div>
-            <label className="font-medium" htmlFor="">
-              Name*
-            </label>
-            <input
-              type="text"
-              className="mt-2 w-full border-[1px] text-[#737373] placeholder:text-[#737373] border-[#737373] bg-[#fffcf2] p-4 rounded-[13px]"
-              placeholder="Enter your name"
-              required
-            />
-          </div>
-          <div>
-            <label className="font-medium" htmlFor="">
-              Email*
-            </label>
-            <input
-              type="text"
-              className="mt-2 w-full border-[1px] text-[#737373] placeholder:text-[#737373] border-[#737373] bg-[#fffcf2] p-4 rounded-[13px]"
-              placeholder="Email"
-              required
-            />
-          </div>
-          <div>
-            <label className="font-medium" htmlFor="">
-              Phone Number*
-            </label>
-            <input
-              type="text"
-              className="mt-2 w-full border-[1px] text-[#737373] placeholder:text-[#737373] border-[#737373] bg-[#fffcf2] p-4 rounded-[13px]"
-              placeholder="Phone Number"
-              required
-            />
-          </div>
-          <div>
-            <label className="font-medium" htmlFor="">
-              Message*
-            </label>
-            <textarea
-              type="text"
-              className="lg:h-[150px] h-[150px] mt-2 w-full border-[1px] text-[#737373] placeholder:text-[#737373] border-[#737373] bg-[#fffcf2] p-4 rounded-[13px] resize-none"
-              placeholder="Type your message"
-              required
-            />
-          </div>
-          <button className="bg-[#CD8A38] text-white font-dm w-full font-semibold py-4">
-            Send message
-          </button>
-        </form>
-      </div>
+      <h3 className="font-work font-medium text-center text-[28px] lg:text-[40px] leading-none">
+        Contact Us
+      </h3>
+      <p className="font-work text-[#737373] text-[16px] text-center font-medium">
+        Our friendly team would love to hear from you.
+      </p>
+
+      <form
+        onSubmit={sendEmail}
+        className="mt-6 lg:mt-8 font-work bg-[#fffcf2] space-y-4 lg:space-y-8"
+      >
+        <div>
+          <label className="font-medium">Name*</label>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className="mt-2 w-full border-[1px] text-[#737373] placeholder:text-[#737373] border-[#737373] bg-[#fffcf2] p-4 rounded-[13px]"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+
+        <div>
+          <label className="font-medium">Email*</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="mt-2 w-full border-[1px] text-[#737373] placeholder:text-[#737373] border-[#737373] bg-[#fffcf2] p-4 rounded-[13px]"
+            placeholder="Email"
+            required
+          />
+        </div>
+
+        <div>
+          <label className="font-medium">Phone Number*</label>
+          <input
+            type="text"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            className="mt-2 w-full border-[1px] text-[#737373] placeholder:text-[#737373] border-[#737373] bg-[#fffcf2] p-4 rounded-[13px]"
+            placeholder="Phone Number"
+            required
+          />
+        </div>
+
+        <div>
+          <label className="font-medium">Message*</label>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            className="lg:h-[150px] h-[150px] mt-2 w-full border-[1px] text-[#737373] placeholder:text-[#737373] border-[#737373] bg-[#fffcf2] p-4 rounded-[13px] resize-none"
+            placeholder="Type your message"
+            required
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="bg-[#CD8A38] text-white font-dm w-full font-semibold py-4"
+        >
+          Send message
+        </button>
+      </form>
+    </div>
     </div>
   );
 };
