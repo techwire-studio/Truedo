@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 
 import logo from "../assets/serviveLogo.png"
@@ -116,6 +117,7 @@ const Services = () => {
             your lifestyle with elegance and ease.
           </motion.p>
 
+         <Link to="/contact">
           <motion.button
             // initial={{ opacity: 0, scale: 0.85 }}
             // whileInView={{ opacity: 1, scale: 1 }}
@@ -131,6 +133,7 @@ const Services = () => {
             CONTACT US
             <span className="ml-2 inline-block -rotate-45">→</span>
           </motion.button>
+         </Link>
         </div>
       </div>
     </div>
