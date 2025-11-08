@@ -62,7 +62,7 @@ const Contact = () => {
             <div className="bg-black w-fit p-2 rounded-[17px]">
               <img className="h-8 w-8" src={location} alt="" />
             </div>
-            <p className="font-work font-medium lg:text-[16px] mt-2">Visit site</p>
+            <p className="font-work font-medium lg:text-[16px] mt-2">Visit Us</p>
             <p className="font-dm font-semibold text-[#737373] text-[12px] lg:text-[14px] mt-2">
               594/1, Kodigehalli - 
             </p>

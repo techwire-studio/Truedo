@@ -187,6 +187,8 @@ const Header = () => {
                 transition={{ duration: 0.6 }}
                 className="text-[24px] space-y-4 flex flex-col font-semibold px-6"
               >
+                <a href="/">
+                Home</a>
                 <a href="/our-services" className="duration-300">
                   Services
                 </a>

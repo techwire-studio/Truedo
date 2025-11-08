@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import { Link } from "react-router-dom";
+
 import img1 from "../assets/about-us-1.png";
 import img2 from "../assets/about-us-2.png";
 import exp1 from "../assets/Experience1.png";
@@ -259,9 +261,11 @@ const AboutUs = () => {
         <div className="w-full lg:w-fit  text-center text-[#202B1A] font-semibold  text-[15px] lg:text-[28px]  font-dm rounded-[40px] lg:rounded-[60.74px] border-dashed border-[#202B1A] border-[1.22px] px-0 lg:px-16 pt-6 lg:pt-4 pb-8 lg:pb-6">
           Let’s bring your dream space to life
         </div>
-        <div className="absolute font-bold mt-20 lg:mt-28 bg-[#CD8A38] shadow-[0px_4.42px_9.02px_10.1px_rgba(255,176,4,0.2)] w-fit rounded-[25px] lg:rounded-[60.74px] text-[#f5f5f5] font-dm lg:text-[20px] px-10 lg:px-12 py-3 lg:py-4 lg:-rotate-2 hover:rotate-0 transition duration-300">
+        <Link to="/contact" className='absolute font-bold mt-20 lg:mt-28 '>
+        <div className="bg-[#CD8A38]  shadow-[0px_4.42px_9.02px_10.1px_rgba(255,176,4,0.2)] w-fit rounded-[25px] lg:rounded-[60.74px] text-[#f5f5f5] font-dm lg:text-[20px] px-10 lg:px-12 py-3 lg:py-4 lg:-rotate-2 hover:rotate-0 transition duration-300">
           Request a Call Back
         </div>
+        </Link>
       </div>
     
           </div>

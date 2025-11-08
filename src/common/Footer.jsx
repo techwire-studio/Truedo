@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useLocation } from "react-router-dom"
 import footerLogo1 from "../assets/footerLogo1.png"
 import footerLogo2 from "../assets/footerLogo2.png"
@@ -31,7 +32,12 @@ const Footer = () => {
               594/1, Kodigehalli - Thindlu <br /> Main Road, Bengaluru- 560092.
             </p>
           </span>
+          <Link
+          to="/contact"
+          >
+          
           <button
+            
             className="relative font-dm bg-[#CD8A38] text-white w-fit px-8 py-4 font-semibold tracking-wide transition-colors"
             style={{
               clipPath:
@@ -41,6 +47,7 @@ const Footer = () => {
             CONTACT US
             <span className="ml-2 inline-block -rotate-45">→</span>
           </button>
+          </Link>
         </div>
 
         {/* Right side */}
