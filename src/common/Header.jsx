@@ -57,6 +57,14 @@ const Header = () => {
       lg:text-[14px]`}
         >
           <a
+            href="/our-services"
+            className={`transition-all duration-200 ${
+              isActive("/our-services") ? "font-bold text-[16px]" : "opacity-60"
+            }`}
+          >
+            Services
+          </a>
+          <a
             href="/about-us"
             className={`transition-all duration-200 ${
               isActive("/about-us") ? "font-bold text-[16px] " : "opacity-60"
@@ -65,14 +73,7 @@ const Header = () => {
             About Us
           </a>
 
-          <a
-            href="/our-services"
-            className={`transition-all duration-200 ${
-              isActive("/our-services") ? "font-bold text-[16px]" : "opacity-60"
-            }`}
-          >
-            Services
-          </a>
+          
 
           <a 
           href="https://drive.google.com/file/d/1dFf9QhlYk-wcngq_PKxfsQ2G9yRAjqfy/view?usp=sharing"
@@ -186,13 +187,14 @@ const Header = () => {
                 transition={{ duration: 0.6 }}
                 className="text-[24px] space-y-4 flex flex-col font-semibold px-6"
               >
+                <a href="/our-services" className="duration-300">
+                  Services
+                </a>
                 <a href="/about-us" className="duration-300">
                   About us
                 </a>
 
-                <a href="/our-services" className="duration-300">
-                  Services
-                </a>
+                
                 <a
                   href="https://drive.google.com/file/d/1dFf9QhlYk-wcngq_PKxfsQ2G9yRAjqfy/view?usp=sharing"
                   target="_blank"
