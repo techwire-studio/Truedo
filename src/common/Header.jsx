@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import logo1 from "../assets/logoMain1.png";
 import logo2 from "../assets/logoMain2.png";
+import logoWhite from "../assets/logoWhite.png";
 
 // import blackLogo1 from "../assets/logoMain1Black.png";
 import blackLogo2 from "../assets/logoMain2Black.png";
@@ -33,15 +34,19 @@ const Header = () => {
     <div>
       <div>
         <Link to="/">
-      <div className="cursor-pointer hidden font-dm uppercase absolute top-0 left-6 z-20 px-0 py-4 gap-2 items-center font-medium lg:flex ">
-        <img className="h-10 w-10" src={logo1} alt="" />
+          {/* ✅ Hide on Home Page */}
+          {!isHome && (
+            <div className="cursor-pointer hidden font-dm uppercase absolute top-4 left-8 z-20 px-0 py-4 gap-2 items-center font-medium lg:flex ">
+              <img className="h-10 w-10" src={logo1} alt="" />
 
-        {/* ✅ If Home page → use homeLogo else → blackLogo2 */}
-        <img className="h-6" src={isHome ? logo2 : blackLogo2} alt="" />
-      </div>
-    </Link>
+              {/* ✅ If Home page → use logo2 else → blackLogo2 */}
+              <img className="h-6" src={isHome ? logo2 : blackLogo2} alt="" />
+            </div>
+          )}
+        </Link>
+
         <div
-        className={`hidden font-dm uppercase absolute top-4 left-1/2 z-20 px-16 py-4 gap-16 font-medium lg:flex items-center justify-center transform -translate-x-1/2 rounded-[14px] 
+          className={`hidden font-dm uppercase absolute top-4 left-1/2 z-20 px-16 py-4 gap-16 font-medium lg:flex items-center justify-center transform -translate-x-1/2 rounded-[14px] 
       ${
         isActive("/our-services") ||
         isActive("/contact") ||
@@ -49,46 +54,41 @@ const Header = () => {
           ? "border-black text-black"
           : "border-[#FFFCF2] text-[#FFFCF2]"
       }
-       lg:text-[14px]`}
-      >
-        <a
-          href="/about-us"
-          className={`transition-all duration-200 ${
-            isActive("/about-us") ? "font-bold text-[16px] " : "opacity-60"
-          }`}
+      lg:text-[14px]`}
         >
-          About Us
-        </a>
-       
-        <a
-          href="/our-services"
-          className={`transition-all duration-200 ${
-            isActive("/our-services") ? "font-bold text-[16px]" : "opacity-60"
-          }`}
-        >
-          Services
-        </a>
-           <a
-          href="/"
-          className={`transition-all duration-200 ${
-            isActive("/") ? "font-bold text-[16px] " : "opacity-60"
-          }`}
-        >
-          Profile
-        </a>
+          <a
+            href="/about-us"
+            className={`transition-all duration-200 ${
+              isActive("/about-us") ? "font-bold text-[16px] " : "opacity-60"
+            }`}
+          >
+            About Us
+          </a>
 
-        
+          <a
+            href="/our-services"
+            className={`transition-all duration-200 ${
+              isActive("/our-services") ? "font-bold text-[16px]" : "opacity-60"
+            }`}
+          >
+            Services
+          </a>
 
-        <a
-          href="/contact"
-          className={`transition-all duration-200 ${
-            isActive("/contact") ? "font-bold text-[16px]" : "opacity-60"
-          }`}
-        >
-          Contact Us
-        </a>
+          <a href="/" className={`transition-all duration-200 opacity-60`}>
+            Profile
+          </a>
+
+          <a
+            href="/contact"
+            className={`transition-all duration-200 ${
+              isActive("/contact") ? "font-bold text-[16px]" : "opacity-60"
+            }`}
+          >
+            Contact Us
+          </a>
+        </div>
       </div>
-      </div>
+
       {/* Mobile */}
       <div>
         {/* ===== Header Bar ===== */}
@@ -103,9 +103,10 @@ const Header = () => {
       }
       
     `}
-    style={{
-      background:"linear-gradient(180deg,rgba(0, 0, 0, 0.67) 0%, rgba(0, 0, 0, 0.49) 50%, rgba(0, 0, 0, 0) 100%)"
-    }}
+          style={{
+            background:
+              "linear-gradient(180deg,rgba(0, 0, 0, 0.67) 0%, rgba(0, 0, 0, 0.49) 50%, rgba(0, 0, 0, 0) 100%)",
+          }}
         >
           {/* Logo */}
           <div className="flex items-center gap-2">
@@ -113,7 +114,7 @@ const Header = () => {
               <div className="flex items-center gap-2">
                 <img
                   className="w-[30px] h-[30px]"
-                  src={menuOpen ? logo1 : isHome ? logo1 : logo1}
+                  src={menuOpen ? logoWhite : isHome ? logoWhite : logoWhite}
                   alt="Logo 1"
                 />
                 <img
@@ -181,17 +182,25 @@ const Header = () => {
                 transition={{ duration: 0.6 }}
                 className="text-[24px] space-y-4 flex flex-col font-semibold px-6"
               >
-                <a href="/" className=" duration-300">
-                  Home
-                </a>
-                <a href="/our-services" className="duration-300">
-                  Services
-                </a>
                 <a href="/about-us" className="duration-300">
                   About us
                 </a>
+
+                <a href="/our-services" className="duration-300">
+                  Services
+                </a>
+               <a
+  href="https://drive.google.com/file/d/1dFf9QhlYk-wcngq_PKxfsQ2G9yRAjqfy/view?usp=sharing"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="duration-300"
+>
+  Profile
+</a>
+
+
                 <a href="/contact" className="duration-300">
-                  Contact
+                  Contact Us
                 </a>
               </motion.ul>
 

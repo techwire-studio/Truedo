@@ -97,8 +97,8 @@ const Services = () => {
           // viewport={{ once: true }}
           className="text-[#202B1A] font-bold text-4xl lg:text-5xl flex items-center gap-2"
         >
-          <p>OUR</p>
           <img className="h-[40px]" src={logo} alt="" />
+          <p>OUR</p>
           <p>SERVICES</p>
         </motion.div>
 
@@ -140,7 +140,7 @@ const Services = () => {
       <div className="hidden lg:block">
         <div
           className="relative  mb-0"
-          style={{ height: `${(services.length - 1) * 70}vh` }}
+          style={{ height: `${(services.length - 1) * 75}vh` }}
         >
           {services.map((service, index) => (
             <div
@@ -168,7 +168,7 @@ const Services = () => {
         </div>
        <div
           className="relative  mb-0"
-          style={{ height: `${(services.length - 1) * 70}vh` }}
+          style={{ height: `${(services.length - 1) * 75}vh` }}
         >
           {services2.map((service, index) => (
             <div

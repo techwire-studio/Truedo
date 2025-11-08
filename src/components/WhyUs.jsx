@@ -76,7 +76,7 @@ export default function WhyUs() {
     >
       <motion.div
         variants={fadeInUp}
-        className="bg-[#CD8B3B] h-full rounded-[21px] px-4 py-4 lg:rounded-[51px] lg:px-16 lg:py-16 overflow-hidden"
+        className="bg-[#CD8B3B] h-full rounded-[21px] px-4 py-4 lg:rounded-[51px] lg:px-16 lg:py-10 overflow-hidden"
       >
         {/* Header */}
         <motion.div
@@ -102,7 +102,7 @@ export default function WhyUs() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="w-full h-[400px] font-work"
+          className="w-full h-[380px] font-work"
         >
           <Swiper
             modules={[Autoplay]}
@@ -133,13 +133,13 @@ export default function WhyUs() {
                   <motion.div
                     whileHover={{ scale: 1.12, rotate: 3 }}
                     transition={{ type: "spring", stiffness: 120 }}
-                    className="rounded-full h-20 w-20 lg:h-32 lg:w-32 bg-[#CD8B3B] flex justify-center items-center"
+                    className="rounded-full h-20 w-20 lg:h-28 lg:w-28 bg-[#CD8B3B] flex justify-center items-center"
                   >
                     <motion.img
                       initial={{ scale: 0.8, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 0.6 }}
-                      className="lg:h-[60px] lg:w-[60px] h-[40px] w-auto"
+                      className="lg:h-[50px] lg:w-[50px] h-[40px] w-auto"
                       src={slide.icon}
                       alt={slide.title}
                     />
@@ -149,7 +149,7 @@ export default function WhyUs() {
                     initial={{ opacity: 0, y: 25 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.55 }}
-                    className="text-black text-[24px] lg:text-[28px] font-work font-medium text-center uppercase leading-[26.3px] mt-2 lg:mt-4"
+                    className="text-black text-[24px] lg:text-[24px] font-work font-medium text-center uppercase leading-[26.3px] mt-2 lg:mt-4"
                   >
                     {slide.title}
                   </motion.h4>

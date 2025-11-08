@@ -237,7 +237,7 @@ const Featured = () => {
                   <div className="lg:w-[60%] pb-20">
                     <div className="lg:w-[100%] flex items-center justify-center">
                       <img
-                        className="h-[540px] rounded-[35px] w-full  transition-all duration-700"
+                        className="h-fit rounded-[35px] w-full  transition-all duration-700"
                         src={product.image}
                         alt={product.title}
                       />
