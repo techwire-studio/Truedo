@@ -210,9 +210,13 @@ const Header = () => {
                 </a>
               </motion.ul>
 
-              <div className="bg-white text-black text-[18px] font-semibold px-10 mx-auto py-3 rounded-full text-center w-[90%] cursor-pointer hover:bg-[#C8ACD6] hover:text-white duration-300">
+              <Link to="/contact">
+                <div
+                onClick={() => setMenuOpen(false)}
+                className="bg-white text-black text-[18px] font-semibold px-10 mx-auto py-3 rounded-full text-center w-[90%] cursor-pointer  duration-300">
                 Get In Touch
               </div>
+              </Link>
             </motion.div>
           )}
         </AnimatePresence>

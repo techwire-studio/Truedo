@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import logo from "../assets/minimalist-kitchen-interior-design 3.png"
 import serviceLogo from "../assets/serviceLogo1.png";
@@ -75,6 +76,7 @@ const Services = () => {
         </motion.div>
 
         {/* Button */}
+        <Link to="/our-services">
         <motion.button
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.96 }}
@@ -93,6 +95,7 @@ const Services = () => {
             →
           </motion.span>
         </motion.button>
+        </Link>
       </div>
 
       {/* ===== Services List (Desktop) ===== */}
