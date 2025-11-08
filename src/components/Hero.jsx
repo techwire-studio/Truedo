@@ -30,7 +30,7 @@ const Hero = () => {
           />
 
           <img
-            className="w-[90%] lg:h-[500px]"
+            className="w-[90%] lg:h-[450px]"
             src={hero}
             alt="Hero Design"
           />

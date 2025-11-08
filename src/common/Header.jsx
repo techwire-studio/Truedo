@@ -189,11 +189,10 @@ const Header = () => {
                 <a href="/our-services" className="duration-300">
                   Services
                 </a>
-               <a
+             <a
   href="https://drive.google.com/file/d/1dFf9QhlYk-wcngq_PKxfsQ2G9yRAjqfy/view?usp=sharing"
   target="_blank"
   rel="noopener noreferrer"
-  className="duration-300"
 >
   Profile
 </a>
