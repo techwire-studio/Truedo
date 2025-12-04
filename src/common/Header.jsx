@@ -23,7 +23,7 @@ const NAV_ITEMS = [
 const NavLinkItem = ({ item, isHome = true }) => {
   const hoverColor = isHome ? "hover:text-white" : "hover:text-black";
 
-  const base = `transition-all duration-200 opacity-60 hover:opacity-100 ${hoverColor}`;
+  const base = `transition-all whitespace-nowrap duration-200 opacity-60 hover:opacity-100 ${hoverColor}`;
 
   if (item.external) {
     return (

@@ -7,6 +7,7 @@ import featured4 from "../assets/featuredMobile1.png";
 import featured5 from "../assets/featuredMobile2.png";
 import featured6 from "../assets/featuredMobile3.png";
 import arrow from "../assets/featuredArrow.png";
+import { Link } from "react-router-dom";
 
 const featuredProducts = [
   {
@@ -158,8 +159,8 @@ const Featured = () => {
 
   return (
     <div>
+      {/* Desktop */}
       <div className="pb-8 lg:px-8 hidden lg:block">
-        {/* Scroll space - reduced for easier navigation */}
         <div style={{ height: `${scrollHeight}vh` }}>
           <div
             ref={containerRef}
@@ -170,7 +171,6 @@ const Featured = () => {
                 Featured Products
               </p>
 
-              {/* Slides */}
               {featuredProducts.map((product, index) => (
                 <div
                   key={index}
@@ -181,11 +181,9 @@ const Featured = () => {
                       ? "opacity-0 -translate-y-full"
                       : "opacity-0 translate-y-full"
                   }`}
-                  style={{
-                    top: "80px",
-                  }}
+                  style={{ top: "80px" }}
                 >
-                  <div className="lg:w-[40%] text-[rgb(255,252,242)] mt-8">
+                  <div className="lg:w-[40%] text-[rgb(255,252,242)] mt-8 flex flex-col">
                     <span className="flex items-start gap-4">
                       <img src={arrow} alt="" />{" "}
                       <h2 className="lg:text-[36px] font-bold font-work leading-none">
@@ -195,25 +193,29 @@ const Featured = () => {
                     <p className="mt-8 font-dm leading-[37px] tracking-wider lg:text-[22px]">
                       {product.description}
                     </p>
-                    <button
-                      className="mt-0 absolute bottom-12  text-[18px]  font-dm bg-[#CD8A38] text-white px-8 py-4 font-semibold tracking-wide hover:bg-[#b57830] transition-colors"
-                      style={{
-                        clipPath:
-                          "polygon(0 0, calc(100% - 0px) 0, 100% 70%, calc(100% - 10px) 100%, 0 100%)",
-                      }}
-                    >
-                      GET A CUSTOM QUOTE
-                      <span className="ml-2 inline-block -rotate-45">→</span>
-                    </button>
-                  </div>
-                  <div className="lg:w-[60%] pb-20">
-                    <div className="lg:w-[100%] flex items-center justify-center">
-                      <img
-                        className="h-fit rounded-[35px] w-full  transition-all duration-700"
-                        src={product.image}
-                        alt={product.title}
-                      />
+                    <div className="mt-auto">
+                      <Link to="/contact">
+                        <button
+                          className="mt-4 text-[18px] font-dm bg-[#CD8A38] text-white px-8 py-4 font-semibold tracking-wide hover:bg-[#b57830] transition-colors"
+                          style={{
+                            clipPath:
+                              "polygon(0 0, calc(100% - 0px) 0, 100% 70%, calc(100% - 10px) 100%, 0 100%)",
+                          }}
+                        >
+                          GET A CUSTOM QUOTE
+                          <span className="ml-2 inline-block -rotate-45">
+                            →
+                          </span>
+                        </button>
+                      </Link>
                     </div>
+                  </div>
+                  <div className="lg:w-[60%] pb-20 flex justify-center items-center">
+                    <img
+                      className="h-auto w-full rounded-[35px] transition-all duration-700"
+                      src={product.image}
+                      alt={product.title}
+                    />
                   </div>
                 </div>
               ))}
@@ -221,21 +223,29 @@ const Featured = () => {
           </div>
         </div>
       </div>
+
       {/* Mobile */}
       <div className="px-2">
-        <div className="lg:hidden px-6 py-6 space-y-8 bg-black/90 rounded-[38px] ">
+        <div className="lg:hidden px-6 py-6 space-y-8 bg-black/90 rounded-[38px]">
           {featuredProductsMobile.map((product, index) => (
             <div className="relative" key={index}>
-              <img className="rounded-[24px]" src={product.image} alt="" />
-              <div className="absolute inset-0    bg-black/20 overflow-hidden rounded-[20px]">
-                <div className="absolute bottom-0 p-4">
-                  <h5 className="text-white font-work font-semibold text-[24px]">
-                    {product.title}
-                  </h5>
-                  <p className="text-white font-work font-medium text-[12px] leading-none">
-                    {product.shortDescription}
-                  </p>
-                </div>
+              <img
+                className="rounded-[24px] w-full h-auto"
+                src={product.image}
+                alt=""
+              />
+              <div className="absolute inset-0 bg-black/20 overflow-hidden rounded-[20px] flex flex-col justify-end p-4">
+                <h5 className="text-white font-work font-semibold text-[24px]">
+                  {product.title}
+                </h5>
+                <p className="text-white font-work font-medium text-[12px] leading-none">
+                  {product.shortDescription}
+                </p>
+                <Link to="/contact">
+                  <button className="mt-2 text-[14px] font-dm bg-[#CD8A38] text-white px-4 py-2 rounded hover:bg-[#b57830] transition-colors">
+                    GET A CUSTOM QUOTE
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
