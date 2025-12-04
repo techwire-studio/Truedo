@@ -3,12 +3,9 @@ import React from "react";
 import bg from "../assets/Rectangle 13.png";
 import logo from "../assets/logoLarge.png";
 import hero from "../assets/heroNewDesign.png";
-import group from "../assets/Group.svg"
+import group from "../assets/Group.svg";
 import heroMobile from "../assets/homeHeroBg.png";
 import bgMobile from "../assets/Rectangle 15.png";
-
-
-
 
 const Hero = () => {
   return (
@@ -22,18 +19,14 @@ const Hero = () => {
         }}
       >
         {/* CONTENT */}
-        <div className="absolute inset-0 flex flex-col items-center  gap-6 px-6 pt-20">
+        <div className="absolute inset-0 top-16 flex flex-col items-center  gap-6 px-6 pt-20">
           <img
             className="w-[80%] h-[150px]  object-contain"
             src={logo}
             alt="Logo"
           />
 
-          <img
-            className="w-[90%] lg:h-[450px]"
-            src={hero}
-            alt="Hero Design"
-          />
+          <img className="w-[90%] lg:h-[450px]" src={hero} alt="Hero Design" />
         </div>
       </div>
 
@@ -49,15 +42,13 @@ const Hero = () => {
         {/* CONTENT */}
         <div className="relative w-full flex flex-col items-center  gap-6 px-0 py-0 pt-0">
           {/* Logo */}
-          <h3 className="absolute text-white z-10 text-center font-bold text-[38px] leading-[45px]  pt-48 font-prata">Where Precision <br />
-Meets Warmth</h3>
+          <h3 className="absolute text-white z-10 text-center font-bold text-[38px] leading-[45px]  pt-48 font-prata">
+            Where Precision <br />
+            Meets Warmth
+          </h3>
           <img className="absolute z-20 bottom-0 w-[98%]" src={group} alt="" />
           {/* Hero Graphic */}
-          <img
-            className="w-full"
-            src={heroMobile}
-            alt="Hero Mobile"
-          />
+          <img className="w-full" src={heroMobile} alt="Hero Mobile" />
         </div>
       </div>
     </div>

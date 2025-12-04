@@ -79,7 +79,7 @@ const services = [
   },
   {
     id: "sofas-chairs",
-    heading: "SOFAS & CHAIRS",
+    heading: "Sofas & Chairs",
     content:
       "Whether it’s a statement armchair or a sectional sofa, Truedo creates seating that feels personal & timeless.",
     img: img10,
