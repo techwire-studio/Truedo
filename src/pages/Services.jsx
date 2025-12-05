@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link, useSearchParams } from "react-router-dom";
 import logo from "../assets/serviveLogo.png";
@@ -81,7 +81,7 @@ const services = [
     id: "sofas-chairs",
     heading: "Sofas & Chairs",
     content:
-      "Whether it’s a statement armchair or a sectional sofa, Truedo creates seating that feels personal & timeless.",
+      "Whether it's a statement armchair or a sectional sofa, Truedo creates seating that feels personal & timeless.",
     img: img10,
   },
 ];
@@ -92,45 +92,58 @@ const Services = () => {
   const [searchParams] = useSearchParams();
   const selectedId = searchParams.get("id");
 
-  const { scrollY } = useScroll({
-    offset: ["start start", "end end"],
-    target: target,
-  });
+  const { scrollY } = useScroll({ offset: ["start start", "end end"], target });
 
-  const cardAnimations = services.map((_, index) => {
-    const start = index * window.innerHeight;
-    const end = start + window.innerHeight;
-
-    const y = useTransform(scrollY, [start, end], [0, -120]);
-    const scale = useTransform(scrollY, [start, end], [1, 0.92]);
-    const opacity = useTransform(scrollY, [start, end], [1, 0.8]);
-
-    return { y, scale, opacity };
-  });
-
-  // Auto-scroll to card based on query param
   useEffect(() => {
-    if (!selectedId || !target.current) return;
+    if (selectedId && target.current && window.innerWidth >= 1024) {
+      const serviceIndex = services.findIndex(
+        (service) => service.id === selectedId
+      );
 
-    const index = services.findIndex((s) => s.id === selectedId);
-    if (index === -1) return;
+      if (serviceIndex !== -1) {
+        const cardHeight = window.innerHeight;
 
-    const element = cardRefs.current[index];
-    if (!element) return;
+        const scrollPosition = (serviceIndex + 1) * cardHeight;
 
-    // Calculate scroll relative to wrapper
-    const top = element.offsetTop + target.current.offsetTop;
+        const timeoutId = setTimeout(() => {
+          window.scrollTo({
+            top: scrollPosition,
+            behavior: "smooth",
+          });
+        }, 100);
 
-    window.scrollTo({
-      top,
-      behavior: "smooth",
-    });
+        return () => clearTimeout(timeoutId);
+      }
+    }
+  }, [selectedId]);
+
+  useEffect(() => {
+    if (selectedId && window.innerWidth < 1024) {
+      const serviceIndex = services.findIndex(
+        (service) => service.id === selectedId
+      );
+
+      if (serviceIndex !== -1 && cardRefs.current[serviceIndex]) {
+        const timeoutId = setTimeout(() => {
+          const element = cardRefs.current[serviceIndex];
+          if (element) {
+            const topOffset =
+              element.getBoundingClientRect().top + window.scrollY - 100;
+            window.scrollTo({
+              top: topOffset,
+              behavior: "smooth",
+            });
+          }
+        }, 100);
+
+        return () => clearTimeout(timeoutId);
+      }
+    }
   }, [selectedId]);
 
   return (
     <div className="w-full font-helvetica lg:px-8 px-6">
-      {/* Top Content */}
-      <div className="w-full lg:pt-40 lg:mb-20 pt-28 lg:py-0">
+      <div className="w-full lg:pt-40 pt-28 lg:py-0">
         <div className="flex items-start justify-between flex-wrap gap-8">
           <motion.div className="text-[#202B1A] font-bold text-4xl lg:text-5xl flex items-center gap-2">
             <img className="h-[40px]" src={logo} alt="" />
@@ -161,46 +174,71 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Desktop Stack Scroll */}
-      <div ref={target} className="hidden lg:block">
-        <motion.div className="relative mb-0">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.id}
-              id={service.id}
-              ref={(el) => (cardRefs.current[index] = el)}
-              style={{
-                y: cardAnimations[index].y,
-                opacity: cardAnimations[index].opacity,
-              }}
-              className="sticky top-0"
-            >
-              <div className="flex gap-8 lg:gap-20 flex-col lg:flex-row bg-[#fffcf2] py-6 border-t">
-                <div className="lg:w-[50%] flex flex-col">
-                  <span className="text-black font-semibold text-[44px] mb-6 flex items-center gap-2 font-work ">
-                    {service.heading}
-                  </span>
-                  <p className="text-black font-dm text-[24px] leading-[41px] w-[90%] mt-8">
-                    {service.content}
-                  </p>
-                </div>
+      <div
+        ref={target}
+        className="hidden lg:block relative"
+        style={{ height: `${(services.length + 1) * 100}vh` }}
+      >
+        <div className="sticky top-0 h-screen flex justify-center items-center">
+          {services.map((service, index) => {
+            const cardHeight = window.innerHeight;
 
-                <div className="lg:w-[50%] overflow-hidden">
-                  <img className="w-full h-[350px]" src={service.img} alt="" />
-                </div>
-              </div>
-            </motion.div>
-          ))}
+            const start = index * cardHeight;
+            const middle = start + cardHeight;
+            const exit = start + cardHeight * 4;
+            const isFirst = index === 0;
 
-          {/* Extra scroll space for last card */}
-          <div className="h-[300vh]" />
-        </motion.div>
+            const y = useTransform(
+              scrollY,
+              [start, middle, exit],
+              isFirst ? [0, 0, -400] : [400, 0, -400]
+            );
+            const opacity = useTransform(
+              scrollY,
+              [start - cardHeight, start, middle, exit],
+              isFirst ? [1, 1, 1, 1] : [0, 0, 1, 1]
+            );
+
+            return (
+              <motion.div
+                key={service.id}
+                id={service.id}
+                ref={(el) => (cardRefs.current[index] = el)}
+                style={{ y, opacity }}
+                className="absolute w-full will-change-transform"
+              >
+                <div className="flex gap-8 lg:gap-20 flex-col lg:flex-row bg-[#fffcf2] py-6 border-t">
+                  <div className="lg:w-[50%] flex flex-col">
+                    <span className="text-black font-semibold text-[44px] mb-6 flex items-center gap-2 font-work">
+                      {service.heading}
+                    </span>
+                    <p className="text-black font-dm text-[24px] leading-[41px] w-[90%] mt-8">
+                      {service.content}
+                    </p>
+                  </div>
+
+                  <div className="lg:w-[50%] overflow-hidden">
+                    <img
+                      src={service.img}
+                      className="w-full h-[350px] overflow-hidden object-cover"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
 
-      {/* Mobile Version */}
-      <div className="lg:hidden py-10">
-        {services.map((service) => (
-          <div key={service.id} className="border-t-[1px] border-black/20 py-8">
+      <div className="lg:hidden mt-20 py-10">
+        {services.map((service, index) => (
+          <div
+            key={service.id}
+            id={service.id}
+            ref={(el) => (cardRefs.current[index] = el)}
+            className="border-t-[1px] border-black/20 py-8"
+          >
             <div className="flex items-center gap-4">
               <img className="h-14 w-20" src={service.img} alt="" />
               <h4 className="font-work font-semibold text-[24px] leading-[24px]">
