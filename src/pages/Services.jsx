@@ -193,10 +193,11 @@ const Services = () => {
               [start, middle, exit],
               isFirst ? [0, 0, -400] : [400, 0, -400]
             );
+
             const opacity = useTransform(
               scrollY,
-              [start - cardHeight, start, middle, exit],
-              isFirst ? [1, 1, 1, 1] : [0, 0, 1, 1]
+              [start, middle, exit],
+              isFirst ? [1, 1, 1] : [0, 1, 1]
             );
 
             return (
