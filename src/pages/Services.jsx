@@ -146,7 +146,7 @@ const Services = () => {
       <div className="w-full lg:pt-40 pt-28 lg:py-0">
         <div className="flex items-start justify-between flex-wrap gap-8">
           <motion.div className="text-[#202B1A] font-bold text-4xl lg:text-5xl flex items-center gap-2">
-            <img className="h-[40px]" src={logo} alt="" />
+            <img className="h-[40px]" src={logo} alt="Truedo Services Image" />
             <p>OUR</p>
             <p>SERVICES</p>
           </motion.div>
@@ -196,7 +196,7 @@ const Services = () => {
 
             const opacity = useTransform(
               scrollY,
-              [start, middle, exit],
+              [start, start + cardHeight * 0.2, middle],
               isFirst ? [1, 1, 1] : [0, 1, 1]
             );
 
